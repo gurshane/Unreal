@@ -32,7 +32,11 @@ static struct FScriptStruct_MyProject3_StaticRegisterNativesFDirectorCamera
 	void ACameraDirector::StaticRegisterNativesACameraDirector()
 	{
 	}
-	IMPLEMENT_CLASS(ACameraDirector, 3335703682);
+	IMPLEMENT_CLASS(ACameraDirector, 1630948312);
+	void ASequentialCameras::StaticRegisterNativesASequentialCameras()
+	{
+	}
+	IMPLEMENT_CLASS(ASequentialCameras, 3546652899);
 	void AMyProject3GameMode::StaticRegisterNativesAMyProject3GameMode()
 	{
 	}
@@ -46,6 +50,8 @@ static struct FScriptStruct_MyProject3_StaticRegisterNativesFDirectorCamera
 	MYPROJECT3_API class UScriptStruct* Z_Construct_UScriptStruct_FDirectorCamera();
 	MYPROJECT3_API class UClass* Z_Construct_UClass_ACameraDirector_NoRegister();
 	MYPROJECT3_API class UClass* Z_Construct_UClass_ACameraDirector();
+	MYPROJECT3_API class UClass* Z_Construct_UClass_ASequentialCameras_NoRegister();
+	MYPROJECT3_API class UClass* Z_Construct_UClass_ASequentialCameras();
 	MYPROJECT3_API class UClass* Z_Construct_UClass_AMyProject3GameMode_NoRegister();
 	MYPROJECT3_API class UClass* Z_Construct_UClass_AMyProject3GameMode();
 	MYPROJECT3_API class UPackage* Z_Construct_UPackage__Script_MyProject3();
@@ -95,8 +101,6 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 				UProperty* NewProp_FSmoothBlendTime = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("FSmoothBlendTime"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(FSmoothBlendTime, ACameraDirector), 0x0010000000000001);
 				UProperty* NewProp_FTimeBetweenCameraChanges = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("FTimeBetweenCameraChanges"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(FTimeBetweenCameraChanges, ACameraDirector), 0x0010000000000001);
 				UProperty* NewProp_FTimeToNextCameraChange = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("FTimeToNextCameraChange"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(FTimeToNextCameraChange, ACameraDirector), 0x0010000000000001);
-				UProperty* NewProp_Cameras = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Cameras"), RF_Public|RF_Transient|RF_MarkAsNative) UArrayProperty(CPP_PROPERTY_BASE(Cameras, ACameraDirector), 0x0010000000000001);
-				UProperty* NewProp_Cameras_Inner = new(EC_InternalUseOnlyConstructor, NewProp_Cameras, TEXT("Cameras"), RF_Public|RF_Transient|RF_MarkAsNative) UStructProperty(FObjectInitializer(), EC_CppProperty, 0, 0x0000000000000000, Z_Construct_UScriptStruct_FDirectorCamera());
 				UProperty* NewProp_CameraTwo = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CameraTwo"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(CameraTwo, ACameraDirector), 0x0010000000000001, Z_Construct_UClass_AActor_NoRegister());
 				UProperty* NewProp_CameraOne = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CameraOne"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(CameraOne, ACameraDirector), 0x0010000000000001, Z_Construct_UClass_AActor_NoRegister());
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
@@ -112,8 +116,6 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				MetaData->SetValue(NewProp_FTimeBetweenCameraChanges, TEXT("ModuleRelativePath"), TEXT("CameraDirector.h"));
 				MetaData->SetValue(NewProp_FTimeToNextCameraChange, TEXT("Category"), TEXT("CameraDirector"));
 				MetaData->SetValue(NewProp_FTimeToNextCameraChange, TEXT("ModuleRelativePath"), TEXT("CameraDirector.h"));
-				MetaData->SetValue(NewProp_Cameras, TEXT("Category"), TEXT("CameraDirector"));
-				MetaData->SetValue(NewProp_Cameras, TEXT("ModuleRelativePath"), TEXT("CameraDirector.h"));
 				MetaData->SetValue(NewProp_CameraTwo, TEXT("Category"), TEXT("CameraDirector"));
 				MetaData->SetValue(NewProp_CameraTwo, TEXT("ModuleRelativePath"), TEXT("CameraDirector.h"));
 				MetaData->SetValue(NewProp_CameraOne, TEXT("Category"), TEXT("CameraDirector"));
@@ -126,6 +128,47 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ACameraDirector(Z_Construct_UClass_ACameraDirector, &ACameraDirector::StaticClass, TEXT("ACameraDirector"), false, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ACameraDirector);
+	UClass* Z_Construct_UClass_ASequentialCameras_NoRegister()
+	{
+		return ASequentialCameras::StaticClass();
+	}
+	UClass* Z_Construct_UClass_ASequentialCameras()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_ACameraDirector();
+			Z_Construct_UPackage__Script_MyProject3();
+			OuterClass = ASequentialCameras::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_CurrentCamera = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CurrentCamera"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(CurrentCamera, ASequentialCameras), 0x0040000000000001, Z_Construct_UClass_AActor_NoRegister());
+				UProperty* NewProp_SequenceOfCameras = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("SequenceOfCameras"), RF_Public|RF_Transient|RF_MarkAsNative) UArrayProperty(CPP_PROPERTY_BASE(SequenceOfCameras, ASequentialCameras), 0x0040000000000001);
+				UProperty* NewProp_SequenceOfCameras_Inner = new(EC_InternalUseOnlyConstructor, NewProp_SequenceOfCameras, TEXT("SequenceOfCameras"), RF_Public|RF_Transient|RF_MarkAsNative) UStructProperty(FObjectInitializer(), EC_CppProperty, 0, 0x0000000000000000, Z_Construct_UScriptStruct_FDirectorCamera());
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("SequentialCameras.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("SequentialCameras.h"));
+				MetaData->SetValue(OuterClass, TEXT("OnlyDefaultConstructorDeclared"), TEXT(""));
+				MetaData->SetValue(NewProp_CurrentCamera, TEXT("Category"), TEXT("SequentialCameras"));
+				MetaData->SetValue(NewProp_CurrentCamera, TEXT("ModuleRelativePath"), TEXT("SequentialCameras.h"));
+				MetaData->SetValue(NewProp_SequenceOfCameras, TEXT("Category"), TEXT("SequentialCameras"));
+				MetaData->SetValue(NewProp_SequenceOfCameras, TEXT("ModuleRelativePath"), TEXT("SequentialCameras.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_ASequentialCameras(Z_Construct_UClass_ASequentialCameras, &ASequentialCameras::StaticClass, TEXT("ASequentialCameras"), false, nullptr, nullptr);
+	DEFINE_VTABLE_PTR_HELPER_CTOR(ASequentialCameras);
 	UClass* Z_Construct_UClass_AMyProject3GameMode_NoRegister()
 	{
 		return AMyProject3GameMode::StaticClass();
@@ -168,8 +211,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/MyProject3")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0xC6793583;
-			Guid.B = 0x145DC443;
+			Guid.A = 0x37F035B2;
+			Guid.B = 0x68A46E64;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

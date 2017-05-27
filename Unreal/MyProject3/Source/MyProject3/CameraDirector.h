@@ -3,6 +3,7 @@
 #pragma once
 
 #include "GameFramework/Actor.h"
+#include "Kismet/GameplayStatics.h"
 #include "CameraDirector.generated.h"
 
 USTRUCT()
@@ -42,7 +43,7 @@ public:
     float FTimeBetweenCameraChanges;
 
 	UPROPERTY(EditAnywhere)
-	 float FSmoothBlendTime;
+	float FSmoothBlendTime;
 
 	// Sets default values for this actor's properties
 	ACameraDirector();
@@ -52,6 +53,8 @@ public:
 	
 	// Called every frame
 	virtual void Tick( float DeltaSeconds ) override;
+
+	virtual void Direct( float DeltaSeconds);
 
 	
 	

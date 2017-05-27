@@ -13,14 +13,14 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define MYPROJECT3_CameraDirector_generated_h
 
-#define MyProject3_Source_MyProject3_CameraDirector_h_11_GENERATED_BODY \
+#define MyProject3_Source_MyProject3_CameraDirector_h_12_GENERATED_BODY \
 	friend MYPROJECT3_API class UScriptStruct* Z_Construct_UScriptStruct_FDirectorCamera(); \
 	MYPROJECT3_API static class UScriptStruct* StaticStruct();
 
 
-#define MyProject3_Source_MyProject3_CameraDirector_h_28_RPC_WRAPPERS
-#define MyProject3_Source_MyProject3_CameraDirector_h_28_RPC_WRAPPERS_NO_PURE_DECLS
-#define MyProject3_Source_MyProject3_CameraDirector_h_28_INCLASS_NO_PURE_DECLS \
+#define MyProject3_Source_MyProject3_CameraDirector_h_29_RPC_WRAPPERS
+#define MyProject3_Source_MyProject3_CameraDirector_h_29_RPC_WRAPPERS_NO_PURE_DECLS
+#define MyProject3_Source_MyProject3_CameraDirector_h_29_INCLASS_NO_PURE_DECLS \
 	private: \
 	static void StaticRegisterNativesACameraDirector(); \
 	friend MYPROJECT3_API class UClass* Z_Construct_UClass_ACameraDirector(); \
@@ -31,7 +31,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	enum {IsIntrinsic=COMPILED_IN_INTRINSIC};
 
 
-#define MyProject3_Source_MyProject3_CameraDirector_h_28_INCLASS \
+#define MyProject3_Source_MyProject3_CameraDirector_h_29_INCLASS \
 	private: \
 	static void StaticRegisterNativesACameraDirector(); \
 	friend MYPROJECT3_API class UClass* Z_Construct_UClass_ACameraDirector(); \
@@ -42,7 +42,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	enum {IsIntrinsic=COMPILED_IN_INTRINSIC};
 
 
-#define MyProject3_Source_MyProject3_CameraDirector_h_28_STANDARD_CONSTRUCTORS \
+#define MyProject3_Source_MyProject3_CameraDirector_h_29_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ACameraDirector(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ACameraDirector) \
@@ -54,7 +54,7 @@ private: \
 public:
 
 
-#define MyProject3_Source_MyProject3_CameraDirector_h_28_ENHANCED_CONSTRUCTORS \
+#define MyProject3_Source_MyProject3_CameraDirector_h_29_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private copy-constructor, should never be used */ \
 	NO_API ACameraDirector(const ACameraDirector& InCopy); \
@@ -64,23 +64,23 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ACameraDirector); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ACameraDirector)
 
 
-#define MyProject3_Source_MyProject3_CameraDirector_h_25_PROLOG
-#define MyProject3_Source_MyProject3_CameraDirector_h_28_GENERATED_BODY_LEGACY \
+#define MyProject3_Source_MyProject3_CameraDirector_h_26_PROLOG
+#define MyProject3_Source_MyProject3_CameraDirector_h_29_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	MyProject3_Source_MyProject3_CameraDirector_h_28_RPC_WRAPPERS \
-	MyProject3_Source_MyProject3_CameraDirector_h_28_INCLASS \
-	MyProject3_Source_MyProject3_CameraDirector_h_28_STANDARD_CONSTRUCTORS \
+	MyProject3_Source_MyProject3_CameraDirector_h_29_RPC_WRAPPERS \
+	MyProject3_Source_MyProject3_CameraDirector_h_29_INCLASS \
+	MyProject3_Source_MyProject3_CameraDirector_h_29_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define MyProject3_Source_MyProject3_CameraDirector_h_28_GENERATED_BODY \
+#define MyProject3_Source_MyProject3_CameraDirector_h_29_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	MyProject3_Source_MyProject3_CameraDirector_h_28_RPC_WRAPPERS_NO_PURE_DECLS \
-	MyProject3_Source_MyProject3_CameraDirector_h_28_INCLASS_NO_PURE_DECLS \
-	MyProject3_Source_MyProject3_CameraDirector_h_28_ENHANCED_CONSTRUCTORS \
+	MyProject3_Source_MyProject3_CameraDirector_h_29_RPC_WRAPPERS_NO_PURE_DECLS \
+	MyProject3_Source_MyProject3_CameraDirector_h_29_INCLASS_NO_PURE_DECLS \
+	MyProject3_Source_MyProject3_CameraDirector_h_29_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

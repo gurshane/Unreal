@@ -2,7 +2,6 @@
 
 #include "MyProject3.h"
 #include "CameraDirector.h"
-#include "Kismet/GameplayStatics.h"
 //GameplayStatics is a set of functions relevant to this tutorial
 
 
@@ -10,7 +9,7 @@
 ACameraDirector::ACameraDirector()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bCanEverTick = false;
 
 }
 
@@ -26,6 +25,11 @@ void ACameraDirector::Tick( float DeltaTime )
 {
 	Super::Tick( DeltaTime );
 
+	Direct( DeltaTime );
+}
+
+void ACameraDirector::Direct( float DeltaTime )
+{
 	//count down to next camera swap
 	FTimeToNextCameraChange -= DeltaTime;
 

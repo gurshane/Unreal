@@ -14,6 +14,9 @@
 #ifndef MYPROJECT3_Countdown_generated_h
 	#include "Countdown.h"
 #endif
+#ifndef MYPROJECT3_MyPawn_generated_h
+	#include "MyPawn.h"
+#endif
 #ifndef MYPROJECT3_MyProject3GameMode_generated_h
 	#include "MyProject3GameMode.h"
 #endif

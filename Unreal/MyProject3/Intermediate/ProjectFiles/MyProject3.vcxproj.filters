@@ -1,67 +1,70 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ItemGroup>
-    <None Include="..\..\MyProject3.uproject" />
-    <Filter Include="Source">
-      <UniqueIdentifier>{92027248-B25A-46E8-B217-99FBD88B65E4}</UniqueIdentifier>
-    </Filter>
-    <None Include="..\..\Source\MyProject3.Target.cs">
-      <Filter>Source</Filter>
-    </None>
-    <None Include="..\..\Source\MyProject3Editor.Target.cs">
-      <Filter>Source</Filter>
-    </None>
-    <Filter Include="Config">
-      <UniqueIdentifier>{1E1402D2-A5BE-4EE2-80FA-EF5E2DFB6A00}</UniqueIdentifier>
-    </Filter>
-    <None Include="..\..\Config\DefaultEditor.ini">
-      <Filter>Config</Filter>
-    </None>
-    <None Include="..\..\Config\DefaultEngine.ini">
-      <Filter>Config</Filter>
-    </None>
-    <None Include="..\..\Config\DefaultGame.ini">
-      <Filter>Config</Filter>
-    </None>
-    <Filter Include="Source\MyProject3">
-      <UniqueIdentifier>{76A1249E-3795-4B95-A33E-B6405A3EC830}</UniqueIdentifier>
-    </Filter>
-    <None Include="..\..\Source\MyProject3\MyProject3.Build.cs">
-      <Filter>Source\MyProject3</Filter>
-    </None>
-    <ClCompile Include="..\..\Source\MyProject3\MyProject3.cpp">
-      <Filter>Source\MyProject3</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\MyProject3\MyProject3.h">
-      <Filter>Source\MyProject3</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\MyProject3\MyProject3GameMode.cpp">
-      <Filter>Source\MyProject3</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\MyProject3\MyProject3GameMode.h">
-      <Filter>Source\MyProject3</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Source\MyProject3\CameraDirector.h">
-      <Filter>Source\MyProject3</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\MyProject3\SequentialCameras.h">
-      <Filter>Source\MyProject3</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\MyProject3\Countdown.h">
-      <Filter>Source\MyProject3</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\Source\MyProject3\CameraDirector.cpp">
-      <Filter>Source\MyProject3</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\MyProject3\SequentialCameras.cpp">
-      <Filter>Source\MyProject3</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\MyProject3\Countdown.cpp">
-      <Filter>Source\MyProject3</Filter>
-    </ClCompile>
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="..\..\MyProject3.uproject" />
+		<Filter Include="Source">
+			<UniqueIdentifier>{92AD793D-7057-4F36-8228-09D8F5E6AFE4}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Source\MyProject3.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<None Include="..\..\Source\MyProject3Editor.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<Filter Include="Config">
+			<UniqueIdentifier>{2DC2C02F-6F4D-454B-96EF-C0874D3AC208}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Config\DefaultEditor.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultEngine.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultGame.ini">
+			<Filter>Config</Filter>
+		</None >
+		<Filter Include="Source\MyProject3">
+			<UniqueIdentifier>{D927D431-C484-4EBD-AE60-0F9D5A766A9F}</UniqueIdentifier>
+		</Filter>
+		<ClCompile Include="..\..\Source\MyProject3\CameraDirector.cpp">
+			<Filter>Source\MyProject3</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\MyProject3\CameraDirector.h">
+			<Filter>Source\MyProject3</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\MyProject3\Countdown.cpp">
+			<Filter>Source\MyProject3</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\MyProject3\Countdown.h">
+			<Filter>Source\MyProject3</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\MyProject3\MyPawn.cpp">
+			<Filter>Source\MyProject3</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\MyProject3\MyPawn.h">
+			<Filter>Source\MyProject3</Filter>
+		</ClInclude >
+		<None Include="..\..\Source\MyProject3\MyProject3.Build.cs">
+			<Filter>Source\MyProject3</Filter>
+		</None >
+		<ClCompile Include="..\..\Source\MyProject3\MyProject3.cpp">
+			<Filter>Source\MyProject3</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\MyProject3\MyProject3.h">
+			<Filter>Source\MyProject3</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\MyProject3\MyProject3GameMode.cpp">
+			<Filter>Source\MyProject3</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\MyProject3\MyProject3GameMode.h">
+			<Filter>Source\MyProject3</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\MyProject3\SequentialCameras.cpp">
+			<Filter>Source\MyProject3</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\MyProject3\SequentialCameras.h">
+			<Filter>Source\MyProject3</Filter>
+		</ClInclude >
+	</ItemGroup>
 </Project>

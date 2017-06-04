@@ -47,6 +47,10 @@ static struct FScriptStruct_MyProject3_StaticRegisterNativesFDirectorCamera
 		FNativeFunctionRegistrar::RegisterFunction(ACountdown::StaticClass(), "CountdownHasFinished",(Native)&ACountdown::execCountdownHasFinished);
 	}
 	IMPLEMENT_CLASS(ACountdown, 638482822);
+	void AMyPawn::StaticRegisterNativesAMyPawn()
+	{
+	}
+	IMPLEMENT_CLASS(AMyPawn, 4231183461);
 	void AMyProject3GameMode::StaticRegisterNativesAMyProject3GameMode()
 	{
 	}
@@ -55,6 +59,8 @@ static struct FScriptStruct_MyProject3_StaticRegisterNativesFDirectorCamera
 // Cross Module References
 	ENGINE_API class UClass* Z_Construct_UClass_AActor_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_AActor();
+	ENGINE_API class UClass* Z_Construct_UClass_APawn();
+	ENGINE_API class UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
 
 	MYPROJECT3_API class UScriptStruct* Z_Construct_UScriptStruct_FDirectorCamera();
@@ -65,6 +71,8 @@ static struct FScriptStruct_MyProject3_StaticRegisterNativesFDirectorCamera
 	MYPROJECT3_API class UFunction* Z_Construct_UFunction_ACountdown_CountdownHasFinished();
 	MYPROJECT3_API class UClass* Z_Construct_UClass_ACountdown_NoRegister();
 	MYPROJECT3_API class UClass* Z_Construct_UClass_ACountdown();
+	MYPROJECT3_API class UClass* Z_Construct_UClass_AMyPawn_NoRegister();
+	MYPROJECT3_API class UClass* Z_Construct_UClass_AMyPawn();
 	MYPROJECT3_API class UClass* Z_Construct_UClass_AMyProject3GameMode_NoRegister();
 	MYPROJECT3_API class UClass* Z_Construct_UClass_AMyProject3GameMode();
 	MYPROJECT3_API class UPackage* Z_Construct_UPackage__Script_MyProject3();
@@ -238,6 +246,45 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ACountdown(Z_Construct_UClass_ACountdown, &ACountdown::StaticClass, TEXT("ACountdown"), false, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ACountdown);
+	UClass* Z_Construct_UClass_AMyPawn_NoRegister()
+	{
+		return AMyPawn::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AMyPawn()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_APawn();
+			Z_Construct_UPackage__Script_MyProject3();
+			OuterClass = AMyPawn::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_OurVisibleComponent = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("OurVisibleComponent"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(OurVisibleComponent, AMyPawn), 0x0010000000080009, Z_Construct_UClass_USceneComponent_NoRegister());
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("MyPawn.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("MyPawn.h"));
+				MetaData->SetValue(OuterClass, TEXT("OnlyDefaultConstructorDeclared"), TEXT(""));
+				MetaData->SetValue(NewProp_OurVisibleComponent, TEXT("Category"), TEXT("MyPawn"));
+				MetaData->SetValue(NewProp_OurVisibleComponent, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_OurVisibleComponent, TEXT("ModuleRelativePath"), TEXT("MyPawn.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AMyPawn(Z_Construct_UClass_AMyPawn, &AMyPawn::StaticClass, TEXT("AMyPawn"), false, nullptr, nullptr);
+	DEFINE_VTABLE_PTR_HELPER_CTOR(AMyPawn);
 	UClass* Z_Construct_UClass_AMyProject3GameMode_NoRegister()
 	{
 		return AMyProject3GameMode::StaticClass();
@@ -280,8 +327,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/MyProject3")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0xA911CEEE;
-			Guid.B = 0x14E77E4E;
+			Guid.A = 0xBD0D6C2A;
+			Guid.B = 0xF42107F8;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

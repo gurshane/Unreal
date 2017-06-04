@@ -9,7 +9,7 @@
 ACameraDirector::ACameraDirector()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = false;
+	PrimaryActorTick.bCanEverTick = true;
 
 }
 
@@ -17,6 +17,8 @@ ACameraDirector::ACameraDirector()
 void ACameraDirector::BeginPlay()
 {
 	Super::BeginPlay();
+
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("This is an on screen message!"));
 	
 }
 

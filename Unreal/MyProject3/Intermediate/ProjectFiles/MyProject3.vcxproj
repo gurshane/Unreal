@@ -406,7 +406,9 @@
     <NMakeOutput>..\..\Binaries\HTML5\MyProject3-HTML5-Shipping.exe</NMakeOutput>
   </PropertyGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\MyProject3\Countdown.cpp" />
     <ClCompile Include="..\..\Source\MyProject3\SequentialCameras.cpp" />
+    <ClInclude Include="..\..\Source\MyProject3\Countdown.h" />
     <ClInclude Include="..\..\Source\MyProject3\SequentialCameras.h" />
     <None Include="..\..\MyProject3.uproject" />
     <None Include="..\..\Source\MyProject3.Target.cs" />

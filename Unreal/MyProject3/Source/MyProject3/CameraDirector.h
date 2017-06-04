@@ -4,6 +4,8 @@
 
 #include "GameFramework/Actor.h"
 #include "Kismet/GameplayStatics.h"
+#include <EngineGlobals.h>
+#include <Runtime/Engine/Classes/Engine/Engine.h>
 #include "CameraDirector.generated.h"
 
 USTRUCT()

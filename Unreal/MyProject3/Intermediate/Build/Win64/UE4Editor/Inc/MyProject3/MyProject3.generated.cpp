@@ -37,6 +37,10 @@ static struct FScriptStruct_MyProject3_StaticRegisterNativesFDirectorCamera
 	{
 	}
 	IMPLEMENT_CLASS(ASequentialCameras, 3546652899);
+	void ACountdown::StaticRegisterNativesACountdown()
+	{
+	}
+	IMPLEMENT_CLASS(ACountdown, 3512060431);
 	void AMyProject3GameMode::StaticRegisterNativesAMyProject3GameMode()
 	{
 	}
@@ -52,6 +56,8 @@ static struct FScriptStruct_MyProject3_StaticRegisterNativesFDirectorCamera
 	MYPROJECT3_API class UClass* Z_Construct_UClass_ACameraDirector();
 	MYPROJECT3_API class UClass* Z_Construct_UClass_ASequentialCameras_NoRegister();
 	MYPROJECT3_API class UClass* Z_Construct_UClass_ASequentialCameras();
+	MYPROJECT3_API class UClass* Z_Construct_UClass_ACountdown_NoRegister();
+	MYPROJECT3_API class UClass* Z_Construct_UClass_ACountdown();
 	MYPROJECT3_API class UClass* Z_Construct_UClass_AMyProject3GameMode_NoRegister();
 	MYPROJECT3_API class UClass* Z_Construct_UClass_AMyProject3GameMode();
 	MYPROJECT3_API class UPackage* Z_Construct_UPackage__Script_MyProject3();
@@ -169,6 +175,38 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ASequentialCameras(Z_Construct_UClass_ASequentialCameras, &ASequentialCameras::StaticClass, TEXT("ASequentialCameras"), false, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ASequentialCameras);
+	UClass* Z_Construct_UClass_ACountdown_NoRegister()
+	{
+		return ACountdown::StaticClass();
+	}
+	UClass* Z_Construct_UClass_ACountdown()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AActor();
+			Z_Construct_UPackage__Script_MyProject3();
+			OuterClass = ACountdown::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Countdown.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Countdown.h"));
+				MetaData->SetValue(OuterClass, TEXT("OnlyDefaultConstructorDeclared"), TEXT(""));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_ACountdown(Z_Construct_UClass_ACountdown, &ACountdown::StaticClass, TEXT("ACountdown"), false, nullptr, nullptr);
+	DEFINE_VTABLE_PTR_HELPER_CTOR(ACountdown);
 	UClass* Z_Construct_UClass_AMyProject3GameMode_NoRegister()
 	{
 		return AMyProject3GameMode::StaticClass();
@@ -211,8 +249,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/MyProject3")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0x37F035B2;
-			Guid.B = 0x68A46E64;
+			Guid.A = 0x9B62E0F9;
+			Guid.B = 0xB801D2DD;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

@@ -49,12 +49,18 @@
     <ClInclude Include="..\..\Source\MyProject3\SequentialCameras.h">
       <Filter>Source\MyProject3</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\MyProject3\Countdown.h">
+      <Filter>Source\MyProject3</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\MyProject3\CameraDirector.cpp">
       <Filter>Source\MyProject3</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\MyProject3\SequentialCameras.cpp">
+      <Filter>Source\MyProject3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\MyProject3\Countdown.cpp">
       <Filter>Source\MyProject3</Filter>
     </ClCompile>
   </ItemGroup>

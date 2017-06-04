@@ -14,6 +14,8 @@ public:
 	// Sets default values for this actor's properties
 	ACountdown();
 
+	//Starting point of timer
+	UPROPERTY(EditAnywhere)
 	int32 iCountdownTime;
 
 	UTextRenderComponent* CountdownText;
@@ -22,7 +24,9 @@ public:
 
 	void AdvanceTimer();
 
+	UFUNCTION(BlueprintNativeEvent)
 	void CountdownHasFinished();
+	virtual void CountdownHasFinished_Implementation(); //required here because it gives the option for blue print functionality to be executed ontop of this function
 
 	void UpdateTimerDisplay();
 

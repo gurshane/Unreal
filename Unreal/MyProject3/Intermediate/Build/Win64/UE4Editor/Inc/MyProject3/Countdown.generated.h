@@ -13,8 +13,32 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define MYPROJECT3_Countdown_generated_h
 
-#define MyProject3_Source_MyProject3_Countdown_h_11_RPC_WRAPPERS
-#define MyProject3_Source_MyProject3_Countdown_h_11_RPC_WRAPPERS_NO_PURE_DECLS
+#define MyProject3_Source_MyProject3_Countdown_h_11_RPC_WRAPPERS \
+	virtual void CountdownHasFinished_Implementation(); \
+ \
+	DECLARE_FUNCTION(execCountdownHasFinished) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->CountdownHasFinished_Implementation(); \
+		P_NATIVE_END; \
+	}
+
+
+#define MyProject3_Source_MyProject3_Countdown_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execCountdownHasFinished) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->CountdownHasFinished_Implementation(); \
+		P_NATIVE_END; \
+	}
+
+
+#define MyProject3_Source_MyProject3_Countdown_h_11_EVENT_PARMS
+extern MYPROJECT3_API  FName MYPROJECT3_CountdownHasFinished;
+#define MyProject3_Source_MyProject3_Countdown_h_11_CALLBACK_WRAPPERS
 #define MyProject3_Source_MyProject3_Countdown_h_11_INCLASS_NO_PURE_DECLS \
 	private: \
 	static void StaticRegisterNativesACountdown(); \
@@ -59,11 +83,15 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ACountdown); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ACountdown)
 
 
-#define MyProject3_Source_MyProject3_Countdown_h_8_PROLOG
+#define MyProject3_Source_MyProject3_Countdown_h_8_PROLOG \
+	MyProject3_Source_MyProject3_Countdown_h_11_EVENT_PARMS
+
+
 #define MyProject3_Source_MyProject3_Countdown_h_11_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	MyProject3_Source_MyProject3_Countdown_h_11_RPC_WRAPPERS \
+	MyProject3_Source_MyProject3_Countdown_h_11_CALLBACK_WRAPPERS \
 	MyProject3_Source_MyProject3_Countdown_h_11_INCLASS \
 	MyProject3_Source_MyProject3_Countdown_h_11_STANDARD_CONSTRUCTORS \
 public: \
@@ -74,6 +102,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	MyProject3_Source_MyProject3_Countdown_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+	MyProject3_Source_MyProject3_Countdown_h_11_CALLBACK_WRAPPERS \
 	MyProject3_Source_MyProject3_Countdown_h_11_INCLASS_NO_PURE_DECLS \
 	MyProject3_Source_MyProject3_Countdown_h_11_ENHANCED_CONSTRUCTORS \
 private: \

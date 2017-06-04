@@ -9,6 +9,7 @@
 #include "MyProject3.generated.dep.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCode1MyProject3() {}
+FName MYPROJECT3_CountdownHasFinished = FName(TEXT("CountdownHasFinished"));
 class UScriptStruct* FDirectorCamera::StaticStruct()
 {
 	extern MYPROJECT3_API class UPackage* Z_Construct_UPackage__Script_MyProject3();
@@ -37,10 +38,15 @@ static struct FScriptStruct_MyProject3_StaticRegisterNativesFDirectorCamera
 	{
 	}
 	IMPLEMENT_CLASS(ASequentialCameras, 3546652899);
+	void ACountdown::CountdownHasFinished()
+	{
+		ProcessEvent(FindFunctionChecked(MYPROJECT3_CountdownHasFinished),NULL);
+	}
 	void ACountdown::StaticRegisterNativesACountdown()
 	{
+		FNativeFunctionRegistrar::RegisterFunction(ACountdown::StaticClass(), "CountdownHasFinished",(Native)&ACountdown::execCountdownHasFinished);
 	}
-	IMPLEMENT_CLASS(ACountdown, 3512060431);
+	IMPLEMENT_CLASS(ACountdown, 638482822);
 	void AMyProject3GameMode::StaticRegisterNativesAMyProject3GameMode()
 	{
 	}
@@ -56,6 +62,7 @@ static struct FScriptStruct_MyProject3_StaticRegisterNativesFDirectorCamera
 	MYPROJECT3_API class UClass* Z_Construct_UClass_ACameraDirector();
 	MYPROJECT3_API class UClass* Z_Construct_UClass_ASequentialCameras_NoRegister();
 	MYPROJECT3_API class UClass* Z_Construct_UClass_ASequentialCameras();
+	MYPROJECT3_API class UFunction* Z_Construct_UFunction_ACountdown_CountdownHasFinished();
 	MYPROJECT3_API class UClass* Z_Construct_UClass_ACountdown_NoRegister();
 	MYPROJECT3_API class UClass* Z_Construct_UClass_ACountdown();
 	MYPROJECT3_API class UClass* Z_Construct_UClass_AMyProject3GameMode_NoRegister();
@@ -175,6 +182,22 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ASequentialCameras(Z_Construct_UClass_ASequentialCameras, &ASequentialCameras::StaticClass, TEXT("ASequentialCameras"), false, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ASequentialCameras);
+	UFunction* Z_Construct_UFunction_ACountdown_CountdownHasFinished()
+	{
+		UObject* Outer=Z_Construct_UClass_ACountdown();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("CountdownHasFinished"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x08020C00, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Countdown.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
 	UClass* Z_Construct_UClass_ACountdown_NoRegister()
 	{
 		return ACountdown::StaticClass();
@@ -192,13 +215,21 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				UObjectForceRegistration(OuterClass);
 				OuterClass->ClassFlags |= 0x20900080;
 
+				OuterClass->LinkChild(Z_Construct_UFunction_ACountdown_CountdownHasFinished());
 
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_iCountdownTime = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("iCountdownTime"), RF_Public|RF_Transient|RF_MarkAsNative) UIntProperty(CPP_PROPERTY_BASE(iCountdownTime, ACountdown), 0x0010000000000001);
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_ACountdown_CountdownHasFinished(), "CountdownHasFinished"); // 4095983741
 				OuterClass->StaticLink();
 #if WITH_METADATA
 				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Countdown.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Countdown.h"));
 				MetaData->SetValue(OuterClass, TEXT("OnlyDefaultConstructorDeclared"), TEXT(""));
+				MetaData->SetValue(NewProp_iCountdownTime, TEXT("Category"), TEXT("Countdown"));
+				MetaData->SetValue(NewProp_iCountdownTime, TEXT("ModuleRelativePath"), TEXT("Countdown.h"));
+				MetaData->SetValue(NewProp_iCountdownTime, TEXT("ToolTip"), TEXT("Starting point of timer"));
 #endif
 			}
 		}
@@ -249,8 +280,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/MyProject3")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0x9B62E0F9;
-			Guid.B = 0xB801D2DD;
+			Guid.A = 0xA911CEEE;
+			Guid.B = 0x14E77E4E;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

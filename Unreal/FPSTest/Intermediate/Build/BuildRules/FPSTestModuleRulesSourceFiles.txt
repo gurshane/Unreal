@@ -1,0 +1,3 @@
+C:\gsidhu\McGill\SideStuff\Unreal\FPSTest\Source\FPSTest\FPSTest.Build.cs
+C:\gsidhu\McGill\SideStuff\Unreal\FPSTest\Source\FPSTest.Target.cs
+C:\gsidhu\McGill\SideStuff\Unreal\FPSTest\Source\FPSTestEditor.Target.cs

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\FPSTest.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{06D0DBEB-623B-4440-B722-DC9F58C2A3B5}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\FPSTest.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\FPSTestEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{D1F9A4C9-0981-40E7-AB33-F5218C182F40}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\FPSTest">
+      <UniqueIdentifier>{4ADA9142-0556-480B-9ECB-912D3654C20B}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\FPSTest\FPSTest.Build.cs">
+      <Filter>Source\FPSTest</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\FPSTest\FPSTest.cpp">
+      <Filter>Source\FPSTest</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FPSTest\FPSTest.h">
+      <Filter>Source\FPSTest</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\FPSTest\FPSTestGameMode.cpp">
+      <Filter>Source\FPSTest</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FPSTest\FPSTestGameMode.h">
+      <Filter>Source\FPSTest</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\FPSTest\FPSCharacter.h">
+      <Filter>Source\FPSTest</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\FPSTest\FPSCharacter.cpp">
+      <Filter>Source\FPSTest</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

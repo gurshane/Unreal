@@ -5,6 +5,9 @@
 	DO NOT modify this manually! Edit the corresponding .h files instead!
 ===========================================================================*/
 
+#ifndef FPSTEST_FPSProjectile_generated_h
+	#include "FPSProjectile.h"
+#endif
 #ifndef FPSTEST_FPSCharacter_generated_h
 	#include "FPSCharacter.h"
 #endif

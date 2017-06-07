@@ -3,6 +3,7 @@
 #pragma once
 
 #include "GameFramework/Character.h"
+#include "FPSProjectile.h"
 #include "FPSCharacter.generated.h"
 
 UCLASS()
@@ -11,6 +12,19 @@ class FPSTEST_API AFPSCharacter : public ACharacter
 	GENERATED_BODY()
 
 public:
+
+	UPROPERTY(EditAnywhere)
+	UCameraComponent* FPSCameraComponent;
+
+	UPROPERTY(VisibleDefaultsOnly, Category = Mesh)
+	USkeletalMeshComponent* FPSMesh;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
+	FVector MuzzleOffset;
+
+	UPROPERTY(EditDefaultsOnly, Category = Projectile)
+	TSubclassOf<class AFPSProjectile> ProjectileClass;
+
 	// Sets default values for this character's properties
 	AFPSCharacter();
 
@@ -23,6 +37,19 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 
-	
+	UFUNCTION()
+	void MoveForward(float Value);
+
+	UFUNCTION()
+	void MoveRight(float Value);
+
+	UFUNCTION()
+	void StartJump();
+
+	UFUNCTION()
+	void StopJump();
+
+	UFUNCTION()
+	void Fire();
 	
 };

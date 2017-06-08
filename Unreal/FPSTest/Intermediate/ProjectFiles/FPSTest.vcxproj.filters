@@ -49,12 +49,18 @@
     <ClInclude Include="..\..\Source\FPSTest\FPSProjectile.h">
       <Filter>Source\FPSTest</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\FPSTest\FPSHud.h">
+      <Filter>Source\FPSTest</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\FPSTest\FPSCharacter.cpp">
       <Filter>Source\FPSTest</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\FPSTest\FPSProjectile.cpp">
+      <Filter>Source\FPSTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\FPSTest\FPSHud.cpp">
       <Filter>Source\FPSTest</Filter>
     </ClCompile>
   </ItemGroup>

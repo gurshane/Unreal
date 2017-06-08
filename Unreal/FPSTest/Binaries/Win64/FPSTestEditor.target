@@ -2,7 +2,7 @@
 	"TargetName" : "FPSTestEditor",
 	"Platform" : "Win64",
 	"Configuration" : "Development",
-	"BuildId" : "b22af48b-7f53-4018-b4bd-76c11c600fb8",
+	"BuildId" : "e5b11b0f-d805-4f80-b349-9e50e97354aa",
 	"Version" : 
 	{
 		"MajorVersion" : 4,
@@ -15,15 +15,15 @@
 	"BuildProducts" :
 	[
 		{
-			"Path" : "$(ProjectDir)/Binaries/Win64/UE4Editor-FPSTest-1253.dll",
+			"Path" : "$(ProjectDir)/Binaries/Win64/UE4Editor-FPSTest-9754.dll",
 			"Type" : "DynamicLibrary"
 		},
 		{
-			"Path" : "$(ProjectDir)/Binaries/Win64/UE4Editor-FPSTest-1253.pdb",
+			"Path" : "$(ProjectDir)/Binaries/Win64/UE4Editor-FPSTest-9754.pdb",
 			"Type" : "SymbolFile"
 		},
 		{
-			"Path" : "$(ProjectDir)/Intermediate/Build/Win64/UE4Editor/Development/UE4Editor-FPSTest-1253.lib",
+			"Path" : "$(ProjectDir)/Intermediate/Build/Win64/UE4Editor/Development/UE4Editor-FPSTest-9754.lib",
 			"Type" : "ImportLibrary"
 		}
 	],

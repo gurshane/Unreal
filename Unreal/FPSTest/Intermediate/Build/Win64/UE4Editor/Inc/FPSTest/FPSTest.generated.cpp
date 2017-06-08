@@ -11,8 +11,9 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCode1FPSTest() {}
 	void AFPSProjectile::StaticRegisterNativesAFPSProjectile()
 	{
+		FNativeFunctionRegistrar::RegisterFunction(AFPSProjectile::StaticClass(), "OnHit",(Native)&AFPSProjectile::execOnHit);
 	}
-	IMPLEMENT_CLASS(AFPSProjectile, 184365174);
+	IMPLEMENT_CLASS(AFPSProjectile, 377513677);
 	void AFPSCharacter::StaticRegisterNativesAFPSCharacter()
 	{
 		FNativeFunctionRegistrar::RegisterFunction(AFPSCharacter::StaticClass(), "Fire",(Native)&AFPSCharacter::execFire);
@@ -22,21 +23,31 @@ void EmptyLinkFunctionForGeneratedCode1FPSTest() {}
 		FNativeFunctionRegistrar::RegisterFunction(AFPSCharacter::StaticClass(), "StopJump",(Native)&AFPSCharacter::execStopJump);
 	}
 	IMPLEMENT_CLASS(AFPSCharacter, 1101819321);
+	void AFPSHud::StaticRegisterNativesAFPSHud()
+	{
+	}
+	IMPLEMENT_CLASS(AFPSHud, 2945404826);
 	void AFPSTestGameMode::StaticRegisterNativesAFPSTestGameMode()
 	{
 	}
 	IMPLEMENT_CLASS(AFPSTestGameMode, 1376226221);
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
+	ENGINE_API class UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
+	COREUOBJECT_API class UScriptStruct* Z_Construct_UScriptStruct_FVector();
+	ENGINE_API class UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
+	ENGINE_API class UClass* Z_Construct_UClass_AActor_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_AActor();
 	ENGINE_API class UClass* Z_Construct_UClass_UProjectileMovementComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_USphereComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_ACharacter();
-	COREUOBJECT_API class UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API class UClass* Z_Construct_UClass_USkeletalMeshComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
+	ENGINE_API class UClass* Z_Construct_UClass_AHUD();
+	ENGINE_API class UClass* Z_Construct_UClass_UTexture2D_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
 
+	FPSTEST_API class UFunction* Z_Construct_UFunction_AFPSProjectile_OnHit();
 	FPSTEST_API class UClass* Z_Construct_UClass_AFPSProjectile_NoRegister();
 	FPSTEST_API class UClass* Z_Construct_UClass_AFPSProjectile();
 	FPSTEST_API class UFunction* Z_Construct_UFunction_AFPSCharacter_Fire();
@@ -46,9 +57,43 @@ void EmptyLinkFunctionForGeneratedCode1FPSTest() {}
 	FPSTEST_API class UFunction* Z_Construct_UFunction_AFPSCharacter_StopJump();
 	FPSTEST_API class UClass* Z_Construct_UClass_AFPSCharacter_NoRegister();
 	FPSTEST_API class UClass* Z_Construct_UClass_AFPSCharacter();
+	FPSTEST_API class UClass* Z_Construct_UClass_AFPSHud_NoRegister();
+	FPSTEST_API class UClass* Z_Construct_UClass_AFPSHud();
 	FPSTEST_API class UClass* Z_Construct_UClass_AFPSTestGameMode_NoRegister();
 	FPSTEST_API class UClass* Z_Construct_UClass_AFPSTestGameMode();
 	FPSTEST_API class UPackage* Z_Construct_UPackage__Script_FPSTest();
+	UFunction* Z_Construct_UFunction_AFPSProjectile_OnHit()
+	{
+		struct FPSProjectile_eventOnHit_Parms
+		{
+			UPrimitiveComponent* HitComponent;
+			AActor* OtherActor;
+			UPrimitiveComponent* OtherComponent;
+			FVector NormalImpulse;
+			FHitResult Hit;
+		};
+		UObject* Outer=Z_Construct_UClass_AFPSProjectile();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("OnHit"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x00C20401, 65535, sizeof(FPSProjectile_eventOnHit_Parms));
+			UProperty* NewProp_Hit = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("Hit"), RF_Public|RF_Transient|RF_MarkAsNative) UStructProperty(CPP_PROPERTY_BASE(Hit, FPSProjectile_eventOnHit_Parms), 0x0010008008000182, Z_Construct_UScriptStruct_FHitResult());
+			UProperty* NewProp_NormalImpulse = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("NormalImpulse"), RF_Public|RF_Transient|RF_MarkAsNative) UStructProperty(CPP_PROPERTY_BASE(NormalImpulse, FPSProjectile_eventOnHit_Parms), 0x0010000000000080, Z_Construct_UScriptStruct_FVector());
+			UProperty* NewProp_OtherComponent = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("OtherComponent"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(OtherComponent, FPSProjectile_eventOnHit_Parms), 0x0010000000080080, Z_Construct_UClass_UPrimitiveComponent_NoRegister());
+			UProperty* NewProp_OtherActor = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("OtherActor"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(OtherActor, FPSProjectile_eventOnHit_Parms), 0x0010000000000080, Z_Construct_UClass_AActor_NoRegister());
+			UProperty* NewProp_HitComponent = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("HitComponent"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(HitComponent, FPSProjectile_eventOnHit_Parms), 0x0010000000080080, Z_Construct_UClass_UPrimitiveComponent_NoRegister());
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("FPSProjectile.h"));
+			MetaData->SetValue(NewProp_Hit, TEXT("NativeConst"), TEXT(""));
+			MetaData->SetValue(NewProp_OtherComponent, TEXT("EditInline"), TEXT("true"));
+			MetaData->SetValue(NewProp_HitComponent, TEXT("EditInline"), TEXT("true"));
+#endif
+		}
+		return ReturnFunction;
+	}
 	UClass* Z_Construct_UClass_AFPSProjectile_NoRegister()
 	{
 		return AFPSProjectile::StaticClass();
@@ -66,11 +111,13 @@ void EmptyLinkFunctionForGeneratedCode1FPSTest() {}
 				UObjectForceRegistration(OuterClass);
 				OuterClass->ClassFlags |= 0x20900080;
 
+				OuterClass->LinkChild(Z_Construct_UFunction_AFPSProjectile_OnHit());
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 				UProperty* NewProp_ProjectileMovementComponent = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ProjectileMovementComponent"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(ProjectileMovementComponent, AFPSProjectile), 0x00100000000a0009, Z_Construct_UClass_UProjectileMovementComponent_NoRegister());
 				UProperty* NewProp_CollisionComponent = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CollisionComponent"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(CollisionComponent, AFPSProjectile), 0x00100000000b0009, Z_Construct_UClass_USphereComponent_NoRegister());
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AFPSProjectile_OnHit(), "OnHit"); // 820251085
 				OuterClass->StaticLink();
 #if WITH_METADATA
 				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
@@ -240,6 +287,45 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AFPSCharacter(Z_Construct_UClass_AFPSCharacter, &AFPSCharacter::StaticClass, TEXT("AFPSCharacter"), false, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AFPSCharacter);
+	UClass* Z_Construct_UClass_AFPSHud_NoRegister()
+	{
+		return AFPSHud::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AFPSHud()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AHUD();
+			Z_Construct_UPackage__Script_FPSTest();
+			OuterClass = AFPSHud::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x2090028C;
+
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_CrosshairTexture = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CrosshairTexture"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(CrosshairTexture, AFPSHud), 0x0020080000010001, Z_Construct_UClass_UTexture2D_NoRegister());
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+				OuterClass->ClassConfigName = FName(TEXT("Game"));
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Rendering Actor Input Replication"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("FPSHud.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("FPSHud.h"));
+				MetaData->SetValue(OuterClass, TEXT("ShowCategories"), TEXT("Input|MouseInput Input|TouchInput"));
+				MetaData->SetValue(NewProp_CrosshairTexture, TEXT("Category"), TEXT("FPSHud"));
+				MetaData->SetValue(NewProp_CrosshairTexture, TEXT("ModuleRelativePath"), TEXT("FPSHud.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AFPSHud(Z_Construct_UClass_AFPSHud, &AFPSHud::StaticClass, TEXT("AFPSHud"), false, nullptr, nullptr);
+	DEFINE_VTABLE_PTR_HELPER_CTOR(AFPSHud);
 	UClass* Z_Construct_UClass_AFPSTestGameMode_NoRegister()
 	{
 		return AFPSTestGameMode::StaticClass();
@@ -282,8 +368,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/FPSTest")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0x8425CA2E;
-			Guid.B = 0x90AECFA0;
+			Guid.A = 0x71AB0EA2;
+			Guid.B = 0xEF0EB339;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

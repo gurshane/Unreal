@@ -11,6 +11,9 @@
 #ifndef FPSTEST_FPSCharacter_generated_h
 	#include "FPSCharacter.h"
 #endif
+#ifndef FPSTEST_FPSHud_generated_h
+	#include "FPSHud.h"
+#endif
 #ifndef FPSTEST_FPSTestGameMode_generated_h
 	#include "FPSTestGameMode.h"
 #endif

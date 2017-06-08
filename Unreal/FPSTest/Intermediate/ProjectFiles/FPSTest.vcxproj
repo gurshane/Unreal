@@ -414,9 +414,11 @@
     <None Include="..\..\Config\DefaultGame.ini" />
     <None Include="..\..\Source\FPSTest\FPSTest.Build.cs" />
     <ClCompile Include="..\..\Source\FPSTest\FPSCharacter.cpp" />
+    <ClCompile Include="..\..\Source\FPSTest\FPSHud.cpp" />
     <ClCompile Include="..\..\Source\FPSTest\FPSProjectile.cpp" />
     <ClCompile Include="..\..\Source\FPSTest\FPSTest.cpp" />
     <ClInclude Include="..\..\Source\FPSTest\FPSCharacter.h" />
+    <ClInclude Include="..\..\Source\FPSTest\FPSHud.h" />
     <ClInclude Include="..\..\Source\FPSTest\FPSProjectile.h" />
     <ClInclude Include="..\..\Source\FPSTest\FPSTest.h" />
     <ClCompile Include="..\..\Source\FPSTest\FPSTestGameMode.cpp" />

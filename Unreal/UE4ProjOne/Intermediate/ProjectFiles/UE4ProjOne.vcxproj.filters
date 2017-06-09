@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<None Include="..\..\UE4ProjOne.uproject" />
+		<Filter Include="Source">
+			<UniqueIdentifier>{70DC6435-F400-446C-ADA9-2AA1FDFA0D23}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Source\UE4ProjOne.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<None Include="..\..\Source\UE4ProjOneEditor.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<Filter Include="Config">
+			<UniqueIdentifier>{1C4FB4C1-A491-4221-AE87-9EB6DC28F840}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Config\DefaultEditor.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultEngine.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultGame.ini">
+			<Filter>Config</Filter>
+		</None >
+		<Filter Include="Source\UE4ProjOne">
+			<UniqueIdentifier>{6B74C960-E570-4B7B-AC3D-9970E19BC7BD}</UniqueIdentifier>
+		</Filter>
+		<ClCompile Include="..\..\Source\UE4ProjOne\MyObject.cpp">
+			<Filter>Source\UE4ProjOne</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\UE4ProjOne\MyObject.h">
+			<Filter>Source\UE4ProjOne</Filter>
+		</ClInclude >
+		<None Include="..\..\Source\UE4ProjOne\UE4ProjOne.Build.cs">
+			<Filter>Source\UE4ProjOne</Filter>
+		</None >
+		<ClCompile Include="..\..\Source\UE4ProjOne\UE4ProjOne.cpp">
+			<Filter>Source\UE4ProjOne</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\UE4ProjOne\UE4ProjOne.h">
+			<Filter>Source\UE4ProjOne</Filter>
+		</ClInclude >
+	</ItemGroup>
+</Project>

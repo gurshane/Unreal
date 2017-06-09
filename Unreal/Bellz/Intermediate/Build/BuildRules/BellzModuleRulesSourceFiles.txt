@@ -1,0 +1,3 @@
+C:\gsidhu\McGill\SideStuff\Unreal\Bellz\Source\Bellz\Bellz.Build.cs
+C:\gsidhu\McGill\SideStuff\Unreal\Bellz\Source\Bellz.Target.cs
+C:\gsidhu\McGill\SideStuff\Unreal\Bellz\Source\BellzEditor.Target.cs

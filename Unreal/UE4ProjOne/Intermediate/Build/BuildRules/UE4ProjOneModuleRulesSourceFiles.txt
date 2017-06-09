@@ -1,0 +1,3 @@
+C:\gsidhu\McGill\SideStuff\Unreal\UE4ProjOne\Source\UE4ProjOne\UE4ProjOne.Build.cs
+C:\gsidhu\McGill\SideStuff\Unreal\UE4ProjOne\Source\UE4ProjOne.Target.cs
+C:\gsidhu\McGill\SideStuff\Unreal\UE4ProjOne\Source\UE4ProjOneEditor.Target.cs

@@ -70,3 +70,5 @@ Unreal/Bellz/Bellz.VC.db
 Unreal/UE4ProjOne/UE4ProjOne.VC.db
 Unreal/Bellz/Intermediate/CachedAssetRegistry.bin
 Unreal/UE4ProjOne/Intermediate/CachedAssetRegistry.bin
+Unreal/Bellz/Intermediate/*
+Unreal/Bellz/Content/*

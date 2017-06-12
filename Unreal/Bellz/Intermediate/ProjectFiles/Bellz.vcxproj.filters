@@ -4,7 +4,7 @@
 	<ItemGroup>
 		<None Include="..\..\Bellz.uproject" />
 		<Filter Include="Source">
-			<UniqueIdentifier>{A574B8E0-3A05-4FED-8BF3-3277E0710D76}</UniqueIdentifier>
+			<UniqueIdentifier>{5BD2F87C-9742-4722-90E0-0EA020C22C62}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\Bellz.Target.cs">
 			<Filter>Source</Filter>
@@ -13,7 +13,7 @@
 			<Filter>Source</Filter>
 		</None >
 		<Filter Include="Config">
-			<UniqueIdentifier>{87B7F8F4-AFC0-417B-91A3-1F736ECAC8DE}</UniqueIdentifier>
+			<UniqueIdentifier>{7BD05696-265E-4C67-8065-E80161D59A00}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Config\DefaultEditor.ini">
 			<Filter>Config</Filter>
@@ -24,8 +24,11 @@
 		<None Include="..\..\Config\DefaultGame.ini">
 			<Filter>Config</Filter>
 		</None >
+		<None Include="..\..\Config\DefaultInput.ini">
+			<Filter>Config</Filter>
+		</None >
 		<Filter Include="Source\Bellz">
-			<UniqueIdentifier>{F2F03A91-D2DD-4DFC-91C8-CE4DDC9330C0}</UniqueIdentifier>
+			<UniqueIdentifier>{764DDAB1-AF46-437F-95E5-D15FBFCFA7EA}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\Bellz\Bellz.Build.cs">
 			<Filter>Source\Bellz</Filter>
@@ -40,6 +43,12 @@
 			<Filter>Source\Bellz</Filter>
 		</ClCompile >
 		<ClInclude Include="..\..\Source\Bellz\BellzGameMode.h">
+			<Filter>Source\Bellz</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\Bellz\Gladiator.cpp">
+			<Filter>Source\Bellz</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\Bellz\Gladiator.h">
 			<Filter>Source\Bellz</Filter>
 		</ClInclude >
 	</ItemGroup>

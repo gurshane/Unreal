@@ -13,12 +13,45 @@ void EmptyLinkFunctionForGeneratedCode1Bellz() {}
 	{
 	}
 	IMPLEMENT_CLASS(ABellzGameMode, 3878678164);
+	void AGladiator::StaticRegisterNativesAGladiator()
+	{
+		FNativeFunctionRegistrar::RegisterFunction(AGladiator::StaticClass(), "GetCameraBoomAlternate",(Native)&AGladiator::execGetCameraBoomAlternate);
+		FNativeFunctionRegistrar::RegisterFunction(AGladiator::StaticClass(), "GetIsStillAlive",(Native)&AGladiator::execGetIsStillAlive);
+		FNativeFunctionRegistrar::RegisterFunction(AGladiator::StaticClass(), "Jump",(Native)&AGladiator::execJump);
+		FNativeFunctionRegistrar::RegisterFunction(AGladiator::StaticClass(), "MoveForward",(Native)&AGladiator::execMoveForward);
+		FNativeFunctionRegistrar::RegisterFunction(AGladiator::StaticClass(), "MoveRight",(Native)&AGladiator::execMoveRight);
+		FNativeFunctionRegistrar::RegisterFunction(AGladiator::StaticClass(), "OnAttack",(Native)&AGladiator::execOnAttack);
+		FNativeFunctionRegistrar::RegisterFunction(AGladiator::StaticClass(), "OnChangeHealthByAmount",(Native)&AGladiator::execOnChangeHealthByAmount);
+		FNativeFunctionRegistrar::RegisterFunction(AGladiator::StaticClass(), "OnChangeWeapon",(Native)&AGladiator::execOnChangeWeapon);
+		FNativeFunctionRegistrar::RegisterFunction(AGladiator::StaticClass(), "OnGetHealthAmount",(Native)&AGladiator::execOnGetHealthAmount);
+		FNativeFunctionRegistrar::RegisterFunction(AGladiator::StaticClass(), "OnPostAttack",(Native)&AGladiator::execOnPostAttack);
+		FNativeFunctionRegistrar::RegisterFunction(AGladiator::StaticClass(), "OnSetPlayerController",(Native)&AGladiator::execOnSetPlayerController);
+		FNativeFunctionRegistrar::RegisterFunction(AGladiator::StaticClass(), "StopJumping",(Native)&AGladiator::execStopJumping);
+	}
+	IMPLEMENT_CLASS(AGladiator, 2272272954);
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
 	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
+	ENGINE_API class UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
+	ENGINE_API class UClass* Z_Construct_UClass_ACharacter();
+	ENGINE_API class UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 
 	BELLZ_API class UClass* Z_Construct_UClass_ABellzGameMode_NoRegister();
 	BELLZ_API class UClass* Z_Construct_UClass_ABellzGameMode();
+	BELLZ_API class UFunction* Z_Construct_UFunction_AGladiator_GetCameraBoomAlternate();
+	BELLZ_API class UFunction* Z_Construct_UFunction_AGladiator_GetIsStillAlive();
+	BELLZ_API class UFunction* Z_Construct_UFunction_AGladiator_Jump();
+	BELLZ_API class UFunction* Z_Construct_UFunction_AGladiator_MoveForward();
+	BELLZ_API class UFunction* Z_Construct_UFunction_AGladiator_MoveRight();
+	BELLZ_API class UFunction* Z_Construct_UFunction_AGladiator_OnAttack();
+	BELLZ_API class UFunction* Z_Construct_UFunction_AGladiator_OnChangeHealthByAmount();
+	BELLZ_API class UFunction* Z_Construct_UFunction_AGladiator_OnChangeWeapon();
+	BELLZ_API class UFunction* Z_Construct_UFunction_AGladiator_OnGetHealthAmount();
+	BELLZ_API class UFunction* Z_Construct_UFunction_AGladiator_OnPostAttack();
+	BELLZ_API class UFunction* Z_Construct_UFunction_AGladiator_OnSetPlayerController();
+	BELLZ_API class UFunction* Z_Construct_UFunction_AGladiator_StopJumping();
+	BELLZ_API class UClass* Z_Construct_UClass_AGladiator_NoRegister();
+	BELLZ_API class UClass* Z_Construct_UClass_AGladiator();
 	BELLZ_API class UPackage* Z_Construct_UPackage__Script_Bellz();
 	UClass* Z_Construct_UClass_ABellzGameMode_NoRegister()
 	{
@@ -54,6 +87,360 @@ void EmptyLinkFunctionForGeneratedCode1Bellz() {}
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ABellzGameMode(Z_Construct_UClass_ABellzGameMode, &ABellzGameMode::StaticClass, TEXT("ABellzGameMode"), false, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ABellzGameMode);
+	UFunction* Z_Construct_UFunction_AGladiator_GetCameraBoomAlternate()
+	{
+		struct Gladiator_eventGetCameraBoomAlternate_Parms
+		{
+			USpringArmComponent* ReturnValue;
+		};
+		UObject* Outer=Z_Construct_UClass_AGladiator();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("GetCameraBoomAlternate"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x54020401, 65535, sizeof(Gladiator_eventGetCameraBoomAlternate_Parms));
+			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(ReturnValue, Gladiator_eventGetCameraBoomAlternate_Parms), 0x0010000000080588, Z_Construct_UClass_USpringArmComponent_NoRegister());
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Player Attributes"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Gladiator.h"));
+			MetaData->SetValue(NewProp_ReturnValue, TEXT("EditInline"), TEXT("true"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_AGladiator_GetIsStillAlive()
+	{
+		struct Gladiator_eventGetIsStillAlive_Parms
+		{
+			bool ReturnValue;
+		};
+		UObject* Outer=Z_Construct_UClass_AGladiator();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("GetIsStillAlive"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x54020401, 65535, sizeof(Gladiator_eventGetIsStillAlive_Parms));
+			CPP_BOOL_PROPERTY_BITMASK_STRUCT(ReturnValue, Gladiator_eventGetIsStillAlive_Parms, bool);
+			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(ReturnValue, Gladiator_eventGetIsStillAlive_Parms), 0x0010000000000580, CPP_BOOL_PROPERTY_BITMASK(ReturnValue, Gladiator_eventGetIsStillAlive_Parms), sizeof(bool), true);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Player Attributes"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Gladiator.h"));
+			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = \"Game DataTables\")\n       AGameDataTables* TablesInstance;"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_AGladiator_Jump()
+	{
+		UObject* Outer=Z_Construct_UClass_AGladiator();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("Jump"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x04080401, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Player Actions"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Gladiator.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_AGladiator_MoveForward()
+	{
+		struct Gladiator_eventMoveForward_Parms
+		{
+			float value;
+		};
+		UObject* Outer=Z_Construct_UClass_AGladiator();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("MoveForward"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x04080401, 65535, sizeof(Gladiator_eventMoveForward_Parms));
+			UProperty* NewProp_value = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("value"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(value, Gladiator_eventMoveForward_Parms), 0x0010000000000080);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Player Actions"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Gladiator.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_AGladiator_MoveRight()
+	{
+		struct Gladiator_eventMoveRight_Parms
+		{
+			float value;
+		};
+		UObject* Outer=Z_Construct_UClass_AGladiator();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("MoveRight"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x04080401, 65535, sizeof(Gladiator_eventMoveRight_Parms));
+			UProperty* NewProp_value = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("value"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(value, Gladiator_eventMoveRight_Parms), 0x0010000000000080);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Player Actions"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Gladiator.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_AGladiator_OnAttack()
+	{
+		UObject* Outer=Z_Construct_UClass_AGladiator();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("OnAttack"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x04080401, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Player Actions"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Gladiator.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_AGladiator_OnChangeHealthByAmount()
+	{
+		struct Gladiator_eventOnChangeHealthByAmount_Parms
+		{
+			float usedAmount;
+		};
+		UObject* Outer=Z_Construct_UClass_AGladiator();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("OnChangeHealthByAmount"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x04020401, 65535, sizeof(Gladiator_eventOnChangeHealthByAmount_Parms));
+			UProperty* NewProp_usedAmount = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("usedAmount"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(usedAmount, Gladiator_eventOnChangeHealthByAmount_Parms), 0x0010000000000080);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Player Attributes"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Gladiator.h"));
+			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Called when player health has been changed"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_AGladiator_OnChangeWeapon()
+	{
+		UObject* Outer=Z_Construct_UClass_AGladiator();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("OnChangeWeapon"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x04080401, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Player Actions"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Gladiator.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_AGladiator_OnGetHealthAmount()
+	{
+		struct Gladiator_eventOnGetHealthAmount_Parms
+		{
+			float ReturnValue;
+		};
+		UObject* Outer=Z_Construct_UClass_AGladiator();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("OnGetHealthAmount"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x54020401, 65535, sizeof(Gladiator_eventOnGetHealthAmount_Parms));
+			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(ReturnValue, Gladiator_eventOnGetHealthAmount_Parms), 0x0010000000000580);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Player Attributes"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Gladiator.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_AGladiator_OnPostAttack()
+	{
+		UObject* Outer=Z_Construct_UClass_AGladiator();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("OnPostAttack"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x04020401, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Player Actions"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Gladiator.h"));
+			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Called after the player has finished an attack"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_AGladiator_OnSetPlayerController()
+	{
+		struct Gladiator_eventOnSetPlayerController_Parms
+		{
+			bool status;
+		};
+		UObject* Outer=Z_Construct_UClass_AGladiator();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("OnSetPlayerController"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x04020401, 65535, sizeof(Gladiator_eventOnSetPlayerController_Parms));
+			CPP_BOOL_PROPERTY_BITMASK_STRUCT(status, Gladiator_eventOnSetPlayerController_Parms, bool);
+			UProperty* NewProp_status = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("status"), RF_Public|RF_Transient|RF_MarkAsNative) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(status, Gladiator_eventOnSetPlayerController_Parms), 0x0010000000000080, CPP_BOOL_PROPERTY_BITMASK(status, Gladiator_eventOnSetPlayerController_Parms), sizeof(bool), true);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Player Attributes"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Gladiator.h"));
+			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("status determines whether or not the player should have control over the controller"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_AGladiator_StopJumping()
+	{
+		UObject* Outer=Z_Construct_UClass_AGladiator();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("StopJumping"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x04080401, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Player Actions"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Gladiator.h"));
+			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Stops the jump and goes back to idle/run"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UClass* Z_Construct_UClass_AGladiator_NoRegister()
+	{
+		return AGladiator::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AGladiator()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_ACharacter();
+			Z_Construct_UPackage__Script_Bellz();
+			OuterClass = AGladiator::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+				OuterClass->LinkChild(Z_Construct_UFunction_AGladiator_GetCameraBoomAlternate());
+				OuterClass->LinkChild(Z_Construct_UFunction_AGladiator_GetIsStillAlive());
+				OuterClass->LinkChild(Z_Construct_UFunction_AGladiator_Jump());
+				OuterClass->LinkChild(Z_Construct_UFunction_AGladiator_MoveForward());
+				OuterClass->LinkChild(Z_Construct_UFunction_AGladiator_MoveRight());
+				OuterClass->LinkChild(Z_Construct_UFunction_AGladiator_OnAttack());
+				OuterClass->LinkChild(Z_Construct_UFunction_AGladiator_OnChangeHealthByAmount());
+				OuterClass->LinkChild(Z_Construct_UFunction_AGladiator_OnChangeWeapon());
+				OuterClass->LinkChild(Z_Construct_UFunction_AGladiator_OnGetHealthAmount());
+				OuterClass->LinkChild(Z_Construct_UFunction_AGladiator_OnPostAttack());
+				OuterClass->LinkChild(Z_Construct_UFunction_AGladiator_OnSetPlayerController());
+				OuterClass->LinkChild(Z_Construct_UFunction_AGladiator_StopJumping());
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_AttackRange = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("AttackRange"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(AttackRange, AGladiator), 0x0020080000000005);
+				UProperty* NewProp_TotalHealth = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("TotalHealth"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(TotalHealth, AGladiator), 0x0020080000000005);
+				CPP_BOOL_PROPERTY_BITMASK_STRUCT(IsControlable, AGladiator, bool);
+				UProperty* NewProp_IsControlable = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("IsControlable"), RF_Public|RF_Transient|RF_MarkAsNative) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(IsControlable, AGladiator), 0x0010000000000015, CPP_BOOL_PROPERTY_BITMASK(IsControlable, AGladiator), sizeof(bool), true);
+				UProperty* NewProp_WeaponIndex = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("WeaponIndex"), RF_Public|RF_Transient|RF_MarkAsNative) UIntProperty(CPP_PROPERTY_BASE(WeaponIndex, AGladiator), 0x0010000000000015);
+				CPP_BOOL_PROPERTY_BITMASK_STRUCT(IsAttacking, AGladiator, bool);
+				UProperty* NewProp_IsAttacking = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("IsAttacking"), RF_Public|RF_Transient|RF_MarkAsNative) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(IsAttacking, AGladiator), 0x0010000000000015, CPP_BOOL_PROPERTY_BITMASK(IsAttacking, AGladiator), sizeof(bool), true);
+				CPP_BOOL_PROPERTY_BITMASK_STRUCT(IsStillAlive, AGladiator, bool);
+				UProperty* NewProp_IsStillAlive = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("IsStillAlive"), RF_Public|RF_Transient|RF_MarkAsNative) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(IsStillAlive, AGladiator), 0x0010000000000015, CPP_BOOL_PROPERTY_BITMASK(IsStillAlive, AGladiator), sizeof(bool), true);
+				UProperty* NewProp_jumppingVelocity = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("jumppingVelocity"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(jumppingVelocity, AGladiator), 0x0010000000020015);
+				UProperty* NewProp_BaseLookUpRate = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("BaseLookUpRate"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(BaseLookUpRate, AGladiator), 0x0010000000020015);
+				UProperty* NewProp_BaseTurnRate = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("BaseTurnRate"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(BaseTurnRate, AGladiator), 0x0010000000020015);
+				UProperty* NewProp_FollowCamera = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("FollowCamera"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(FollowCamera, AGladiator), 0x00100000000a001d, Z_Construct_UClass_UCameraComponent_NoRegister());
+				UProperty* NewProp_CameraBoom = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CameraBoom"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(CameraBoom, AGladiator), 0x00100000000a001d, Z_Construct_UClass_USpringArmComponent_NoRegister());
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AGladiator_GetCameraBoomAlternate(), "GetCameraBoomAlternate"); // 3029105268
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AGladiator_GetIsStillAlive(), "GetIsStillAlive"); // 1962866565
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AGladiator_Jump(), "Jump"); // 1587542811
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AGladiator_MoveForward(), "MoveForward"); // 3634727939
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AGladiator_MoveRight(), "MoveRight"); // 3355037726
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AGladiator_OnAttack(), "OnAttack"); // 4155882324
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AGladiator_OnChangeHealthByAmount(), "OnChangeHealthByAmount"); // 2809996369
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AGladiator_OnChangeWeapon(), "OnChangeWeapon"); // 2343285426
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AGladiator_OnGetHealthAmount(), "OnGetHealthAmount"); // 4167756467
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AGladiator_OnPostAttack(), "OnPostAttack"); // 729347001
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AGladiator_OnSetPlayerController(), "OnSetPlayerController"); // 4142622724
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AGladiator_StopJumping(), "StopJumping"); // 335694569
+				OuterClass->ClassConfigName = FName(TEXT("Game"));
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Gladiator.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Gladiator.h"));
+				MetaData->SetValue(OuterClass, TEXT("OnlyDefaultConstructorDeclared"), TEXT(""));
+				MetaData->SetValue(NewProp_AttackRange, TEXT("Category"), TEXT("Player Attributes"));
+				MetaData->SetValue(NewProp_AttackRange, TEXT("ModuleRelativePath"), TEXT("Gladiator.h"));
+				MetaData->SetValue(NewProp_TotalHealth, TEXT("Category"), TEXT("Player Attributes"));
+				MetaData->SetValue(NewProp_TotalHealth, TEXT("ModuleRelativePath"), TEXT("Gladiator.h"));
+				MetaData->SetValue(NewProp_IsControlable, TEXT("Category"), TEXT("Player Attributes"));
+				MetaData->SetValue(NewProp_IsControlable, TEXT("ModuleRelativePath"), TEXT("Gladiator.h"));
+				MetaData->SetValue(NewProp_IsControlable, TEXT("ToolTip"), TEXT("Can the player still give input"));
+				MetaData->SetValue(NewProp_WeaponIndex, TEXT("Category"), TEXT("Player Attributes"));
+				MetaData->SetValue(NewProp_WeaponIndex, TEXT("ModuleRelativePath"), TEXT("Gladiator.h"));
+				MetaData->SetValue(NewProp_WeaponIndex, TEXT("ToolTip"), TEXT("Index of the players currently selected weapon"));
+				MetaData->SetValue(NewProp_IsAttacking, TEXT("Category"), TEXT("Player Attributes"));
+				MetaData->SetValue(NewProp_IsAttacking, TEXT("ModuleRelativePath"), TEXT("Gladiator.h"));
+				MetaData->SetValue(NewProp_IsStillAlive, TEXT("Category"), TEXT("Player Attributes"));
+				MetaData->SetValue(NewProp_IsStillAlive, TEXT("ModuleRelativePath"), TEXT("Gladiator.h"));
+				MetaData->SetValue(NewProp_jumppingVelocity, TEXT("Category"), TEXT("Player Attributes"));
+				MetaData->SetValue(NewProp_jumppingVelocity, TEXT("ModuleRelativePath"), TEXT("Gladiator.h"));
+				MetaData->SetValue(NewProp_jumppingVelocity, TEXT("ToolTip"), TEXT("Vertical jump speed of the player"));
+				MetaData->SetValue(NewProp_BaseLookUpRate, TEXT("Category"), TEXT("Camera"));
+				MetaData->SetValue(NewProp_BaseLookUpRate, TEXT("ModuleRelativePath"), TEXT("Gladiator.h"));
+				MetaData->SetValue(NewProp_BaseLookUpRate, TEXT("ToolTip"), TEXT("How fast the camera can look up and down in degrees per second"));
+				MetaData->SetValue(NewProp_BaseTurnRate, TEXT("Category"), TEXT("Camera"));
+				MetaData->SetValue(NewProp_BaseTurnRate, TEXT("ModuleRelativePath"), TEXT("Gladiator.h"));
+				MetaData->SetValue(NewProp_BaseTurnRate, TEXT("ToolTip"), TEXT("How fast the camera can look left and right in degrees per second"));
+				MetaData->SetValue(NewProp_FollowCamera, TEXT("AllowPrivateAccess"), TEXT("true"));
+				MetaData->SetValue(NewProp_FollowCamera, TEXT("Category"), TEXT("Camera"));
+				MetaData->SetValue(NewProp_FollowCamera, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_FollowCamera, TEXT("ModuleRelativePath"), TEXT("Gladiator.h"));
+				MetaData->SetValue(NewProp_FollowCamera, TEXT("ToolTip"), TEXT("Reference to the camera itself"));
+				MetaData->SetValue(NewProp_CameraBoom, TEXT("AllowPrivateAccess"), TEXT("true"));
+				MetaData->SetValue(NewProp_CameraBoom, TEXT("Category"), TEXT("Camera"));
+				MetaData->SetValue(NewProp_CameraBoom, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_CameraBoom, TEXT("ModuleRelativePath"), TEXT("Gladiator.h"));
+				MetaData->SetValue(NewProp_CameraBoom, TEXT("ToolTip"), TEXT("Camera boom used for positioning the camera behind the player"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AGladiator(Z_Construct_UClass_AGladiator, &AGladiator::StaticClass, TEXT("AGladiator"), false, nullptr, nullptr);
+	DEFINE_VTABLE_PTR_HELPER_CTOR(AGladiator);
 	UPackage* Z_Construct_UPackage__Script_Bellz()
 	{
 		static UPackage* ReturnPackage = NULL;
@@ -62,8 +449,8 @@ void EmptyLinkFunctionForGeneratedCode1Bellz() {}
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/Bellz")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0x021635E3;
-			Guid.B = 0xDA8C2CBA;
+			Guid.A = 0x172474C3;
+			Guid.B = 0xE789CAE1;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

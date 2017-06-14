@@ -28,12 +28,13 @@ void EmptyLinkFunctionForGeneratedCode1Bellz() {}
 		FNativeFunctionRegistrar::RegisterFunction(AGladiator::StaticClass(), "OnSetPlayerController",(Native)&AGladiator::execOnSetPlayerController);
 		FNativeFunctionRegistrar::RegisterFunction(AGladiator::StaticClass(), "StopJumping",(Native)&AGladiator::execStopJumping);
 	}
-	IMPLEMENT_CLASS(AGladiator, 2272272954);
+	IMPLEMENT_CLASS(AGladiator, 3062584695);
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
 	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
 	ENGINE_API class UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_ACharacter();
+	PAPER2D_API class UClass* Z_Construct_UClass_UPaperSpriteComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 
 	BELLZ_API class UClass* Z_Construct_UClass_ABellzGameMode_NoRegister();
@@ -377,6 +378,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 				UProperty* NewProp_jumppingVelocity = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("jumppingVelocity"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(jumppingVelocity, AGladiator), 0x0010000000020015);
 				UProperty* NewProp_BaseLookUpRate = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("BaseLookUpRate"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(BaseLookUpRate, AGladiator), 0x0010000000020015);
 				UProperty* NewProp_BaseTurnRate = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("BaseTurnRate"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(BaseTurnRate, AGladiator), 0x0010000000020015);
+				UProperty* NewProp_EffectSprite = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("EffectSprite"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(EffectSprite, AGladiator), 0x00100000000a001d, Z_Construct_UClass_UPaperSpriteComponent_NoRegister());
 				UProperty* NewProp_FollowCamera = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("FollowCamera"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(FollowCamera, AGladiator), 0x00100000000a001d, Z_Construct_UClass_UCameraComponent_NoRegister());
 				UProperty* NewProp_CameraBoom = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CameraBoom"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(CameraBoom, AGladiator), 0x00100000000a001d, Z_Construct_UClass_USpringArmComponent_NoRegister());
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
@@ -423,6 +425,11 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				MetaData->SetValue(NewProp_BaseTurnRate, TEXT("Category"), TEXT("Camera"));
 				MetaData->SetValue(NewProp_BaseTurnRate, TEXT("ModuleRelativePath"), TEXT("Gladiator.h"));
 				MetaData->SetValue(NewProp_BaseTurnRate, TEXT("ToolTip"), TEXT("How fast the camera can look left and right in degrees per second"));
+				MetaData->SetValue(NewProp_EffectSprite, TEXT("AllowPrivateAccess"), TEXT("true"));
+				MetaData->SetValue(NewProp_EffectSprite, TEXT("Category"), TEXT("Effects"));
+				MetaData->SetValue(NewProp_EffectSprite, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_EffectSprite, TEXT("ModuleRelativePath"), TEXT("Gladiator.h"));
+				MetaData->SetValue(NewProp_EffectSprite, TEXT("ToolTip"), TEXT("Paper2D sprite used to render some effects instead of using HUD"));
 				MetaData->SetValue(NewProp_FollowCamera, TEXT("AllowPrivateAccess"), TEXT("true"));
 				MetaData->SetValue(NewProp_FollowCamera, TEXT("Category"), TEXT("Camera"));
 				MetaData->SetValue(NewProp_FollowCamera, TEXT("EditInline"), TEXT("true"));
@@ -449,7 +456,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/Bellz")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0x172474C3;
+			Guid.A = 0xC59A73E8;
 			Guid.B = 0xE789CAE1;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;

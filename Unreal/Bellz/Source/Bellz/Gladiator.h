@@ -2,6 +2,7 @@
 
 #pragma once
 //#include "GameDataTables.h"
+#include "PaperSpriteComponent.h"
 #include "GameFramework/Character.h"
 #include "Gladiator.generated.h"
 
@@ -20,9 +21,9 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class UCameraComponent* FollowCamera;
 
-	////Paper2D sprite used to render some effects instead of using HUD
-	//UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Effects, meta = (AllowPrivateAccess = "true"))
-	//class UPaperSpriteComponent* EffectSprite;
+	//Paper2D sprite used to render some effects instead of using HUD
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Effects, meta = (AllowPrivateAccess = "true"))
+	class UPaperSpriteComponent* EffectSprite;
 
 	//How fast the camera can look left and right in degrees per second
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)

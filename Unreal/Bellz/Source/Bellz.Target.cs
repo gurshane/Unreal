@@ -8,6 +8,10 @@ public class BellzTarget : TargetRules
 	public BellzTarget(TargetInfo Target)
 	{
 		Type = TargetType.Game;
+        //PrivateIncludePaths.AddRange(new string[] { "C:\\Program Files\\Epic Games\\UE_4.12\\Engine\\Plugins\\2D\\Paper2D\\Source\\Paper2D\\Classes",
+        //                                            "C:\\Program Files\\Epic Games\\UE_4.12\\Engine\\Plugins\\2D\\Paper2D\\Source\\Paper2D\\Public",
+        //                                            "C:\\Program Files\\Epic Games\\UE_4.12\\Engine\\Plugins\\2D\\Paper2D\\Intermediate\\Build\\Win64\\UE4Editor\\Inc\\Paper2D",
+        //                                            "C:\\Program Files\\Epic Games\\UE_4.12\\Engine\\Plugins\\2D\\Paper2D\\Source\\Paper2D" });
 	}
 
 	//

@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
-//#include "GameDataTables.h"
+#include "GameDataTables.h"
 #include "PaperSpriteComponent.h"
 #include "GameFramework/Character.h"
 #include "Gladiator.generated.h"
@@ -9,9 +9,9 @@
 UCLASS(config = Game)
 class BELLZ_API AGladiator : public ACharacter
 {
-	GENERATED_BODY()
-
 public:
+
+	GENERATED_BODY()
 
 	//Camera boom used for positioning the camera behind the player
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
@@ -51,8 +51,8 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Player Attributes")
 	bool IsControlable;
 
-	/*UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Game DataTables")
-	AGameDataTables* TablesInstance;*/
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Game DataTables")
+	AGameDataTables* TablesInstance;
 
 	UFUNCTION(BlueprintCallable, Category = "Player Attributes")
 	bool GetIsStillAlive() const { return IsStillAlive; }

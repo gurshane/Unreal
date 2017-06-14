@@ -2,7 +2,7 @@
 
 #include "Bellz.h"
 #include "Gladiator.h"
-//#include "GameDataTables.h"
+#include "GameDataTables.h"
 #include "PaperSpriteComponent.h"
 
 
@@ -36,16 +36,16 @@ AGladiator::AGladiator()
 	GetCharacterMovement()->AirControl = 0.2f;
 
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
-	CameraBoom->AttachTo(RootComponent); //attach the boom to the player
+	CameraBoom->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepRelativeTransform, NAME_None); //attach the boom to the player
 	CameraBoom->TargetArmLength = 300.0f;
 	CameraBoom->bUsePawnControlRotation = true; //rotate the camera around the player
 
 	FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
-	FollowCamera->AttachTo(CameraBoom, USpringArmComponent::SocketName); //Put the camera on the boom in the socket?
+	FollowCamera->AttachToComponent(CameraBoom, FAttachmentTransformRules::KeepRelativeTransform, USpringArmComponent::SocketName); //Put the camera on the boom in the socket?
 	FollowCamera->bUsePawnControlRotation = false;
 
 	EffectSprite = CreateDefaultSubobject<UPaperSpriteComponent>(TEXT("ClawEffect"));
-	EffectSprite->AttachTo(CameraBoom);
+	EffectSprite->AttachToComponent(CameraBoom, FAttachmentTransformRules::KeepRelativeTransform, NAME_None);
 
 	IsStillAlive = true;
 	IsAttacking = false;
@@ -60,8 +60,8 @@ void AGladiator::BeginPlay()
 {
 	Super::BeginPlay();
 	
-	/*
-	for(TActorIterator<AGameDataTables> ActorItr(GetWorld()); ActorItr;, ++ActorItr) // looks for objects of AGameDataTables type in the level
+	
+	for(TActorIterator<AGameDataTables> ActorItr(GetWorld()); ActorItr; ++ActorItr) // looks for objects of AGameDataTables type in the level
 	{
 		if(ActorItr)
 		{
@@ -69,7 +69,7 @@ void AGladiator::BeginPlay()
 			TablesInstance->OnFetchAllTables();
 		}
 	}
-	*/
+	
 }
 
 // Called every frame
@@ -139,7 +139,6 @@ void AGladiator::OnChangeWeapon()
 {
 	if (IsControlable)
 	{
-		/*
 		if(WeaponIndex < TablesInstance->AllWeaponsData.Num())
 		{
 			WeaponIndex++;
@@ -148,7 +147,6 @@ void AGladiator::OnChangeWeapon()
 		{
 			WeaponIndex = 1;
 		}
-		*/
 	}
 }
 

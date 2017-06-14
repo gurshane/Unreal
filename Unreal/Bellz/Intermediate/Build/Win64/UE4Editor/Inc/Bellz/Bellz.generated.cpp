@@ -13,6 +13,51 @@ void EmptyLinkFunctionForGeneratedCode1Bellz() {}
 	{
 	}
 	IMPLEMENT_CLASS(ABellzGameMode, 3878678164);
+class UScriptStruct* FMissionStruct::StaticStruct()
+{
+	extern BELLZ_API class UPackage* Z_Construct_UPackage__Script_Bellz();
+	static class UScriptStruct* Singleton = NULL;
+	if (!Singleton)
+	{
+		extern BELLZ_API class UScriptStruct* Z_Construct_UScriptStruct_FMissionStruct();
+		extern BELLZ_API uint32 Get_Z_Construct_UScriptStruct_FMissionStruct_CRC();
+		Singleton = GetStaticStruct(Z_Construct_UScriptStruct_FMissionStruct, Z_Construct_UPackage__Script_Bellz(), TEXT("MissionStruct"), sizeof(FMissionStruct), Get_Z_Construct_UScriptStruct_FMissionStruct_CRC());
+	}
+	return Singleton;
+}
+static FCompiledInDeferStruct Z_CompiledInDeferStruct_UScriptStruct_FMissionStruct(FMissionStruct::StaticStruct, TEXT("/Script/Bellz"), TEXT("MissionStruct"), false, nullptr, nullptr);
+static struct FScriptStruct_Bellz_StaticRegisterNativesFMissionStruct
+{
+	FScriptStruct_Bellz_StaticRegisterNativesFMissionStruct()
+	{
+		UScriptStruct::DeferCppStructOps(FName(TEXT("MissionStruct")),new UScriptStruct::TCppStructOps<FMissionStruct>);
+	}
+} ScriptStruct_Bellz_StaticRegisterNativesFMissionStruct;
+class UScriptStruct* FWeaponStruct::StaticStruct()
+{
+	extern BELLZ_API class UPackage* Z_Construct_UPackage__Script_Bellz();
+	static class UScriptStruct* Singleton = NULL;
+	if (!Singleton)
+	{
+		extern BELLZ_API class UScriptStruct* Z_Construct_UScriptStruct_FWeaponStruct();
+		extern BELLZ_API uint32 Get_Z_Construct_UScriptStruct_FWeaponStruct_CRC();
+		Singleton = GetStaticStruct(Z_Construct_UScriptStruct_FWeaponStruct, Z_Construct_UPackage__Script_Bellz(), TEXT("WeaponStruct"), sizeof(FWeaponStruct), Get_Z_Construct_UScriptStruct_FWeaponStruct_CRC());
+	}
+	return Singleton;
+}
+static FCompiledInDeferStruct Z_CompiledInDeferStruct_UScriptStruct_FWeaponStruct(FWeaponStruct::StaticStruct, TEXT("/Script/Bellz"), TEXT("WeaponStruct"), false, nullptr, nullptr);
+static struct FScriptStruct_Bellz_StaticRegisterNativesFWeaponStruct
+{
+	FScriptStruct_Bellz_StaticRegisterNativesFWeaponStruct()
+	{
+		UScriptStruct::DeferCppStructOps(FName(TEXT("WeaponStruct")),new UScriptStruct::TCppStructOps<FWeaponStruct>);
+	}
+} ScriptStruct_Bellz_StaticRegisterNativesFWeaponStruct;
+	void AGameDataTables::StaticRegisterNativesAGameDataTables()
+	{
+		FNativeFunctionRegistrar::RegisterFunction(AGameDataTables::StaticClass(), "OnFetchAllTables",(Native)&AGameDataTables::execOnFetchAllTables);
+	}
+	IMPLEMENT_CLASS(AGameDataTables, 895397154);
 	void AGladiator::StaticRegisterNativesAGladiator()
 	{
 		FNativeFunctionRegistrar::RegisterFunction(AGladiator::StaticClass(), "GetCameraBoomAlternate",(Native)&AGladiator::execGetCameraBoomAlternate);
@@ -28,10 +73,13 @@ void EmptyLinkFunctionForGeneratedCode1Bellz() {}
 		FNativeFunctionRegistrar::RegisterFunction(AGladiator::StaticClass(), "OnSetPlayerController",(Native)&AGladiator::execOnSetPlayerController);
 		FNativeFunctionRegistrar::RegisterFunction(AGladiator::StaticClass(), "StopJumping",(Native)&AGladiator::execStopJumping);
 	}
-	IMPLEMENT_CLASS(AGladiator, 3062584695);
+	IMPLEMENT_CLASS(AGladiator, 3197965928);
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
 	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
+	ENGINE_API class UScriptStruct* Z_Construct_UScriptStruct_FTableRowBase();
+	ENGINE_API class UClass* Z_Construct_UClass_AActor();
+	ENGINE_API class UClass* Z_Construct_UClass_UDataTable_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_ACharacter();
 	PAPER2D_API class UClass* Z_Construct_UClass_UPaperSpriteComponent_NoRegister();
@@ -39,6 +87,11 @@ void EmptyLinkFunctionForGeneratedCode1Bellz() {}
 
 	BELLZ_API class UClass* Z_Construct_UClass_ABellzGameMode_NoRegister();
 	BELLZ_API class UClass* Z_Construct_UClass_ABellzGameMode();
+	BELLZ_API class UScriptStruct* Z_Construct_UScriptStruct_FMissionStruct();
+	BELLZ_API class UScriptStruct* Z_Construct_UScriptStruct_FWeaponStruct();
+	BELLZ_API class UFunction* Z_Construct_UFunction_AGameDataTables_OnFetchAllTables();
+	BELLZ_API class UClass* Z_Construct_UClass_AGameDataTables_NoRegister();
+	BELLZ_API class UClass* Z_Construct_UClass_AGameDataTables();
 	BELLZ_API class UFunction* Z_Construct_UFunction_AGladiator_GetCameraBoomAlternate();
 	BELLZ_API class UFunction* Z_Construct_UFunction_AGladiator_GetIsStillAlive();
 	BELLZ_API class UFunction* Z_Construct_UFunction_AGladiator_Jump();
@@ -88,6 +141,129 @@ void EmptyLinkFunctionForGeneratedCode1Bellz() {}
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ABellzGameMode(Z_Construct_UClass_ABellzGameMode, &ABellzGameMode::StaticClass, TEXT("ABellzGameMode"), false, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ABellzGameMode);
+	UScriptStruct* Z_Construct_UScriptStruct_FMissionStruct()
+	{
+		UPackage* Outer = Z_Construct_UPackage__Script_Bellz();
+		extern uint32 Get_Z_Construct_UScriptStruct_FMissionStruct_CRC();
+		static UScriptStruct* ReturnStruct = FindExistingStructIfHotReloadOrDynamic(Outer, TEXT("MissionStruct"), sizeof(FMissionStruct), Get_Z_Construct_UScriptStruct_FMissionStruct_CRC(), false);
+		if (!ReturnStruct)
+		{
+			ReturnStruct = new(EC_InternalUseOnlyConstructor, Outer, TEXT("MissionStruct"), RF_Public|RF_Transient|RF_MarkAsNative) UScriptStruct(FObjectInitializer(), Z_Construct_UScriptStruct_FTableRowBase(), new UScriptStruct::TCppStructOps<FMissionStruct>, EStructFlags(0x00000001));
+			UProperty* NewProp_Collect = new(EC_InternalUseOnlyConstructor, ReturnStruct, TEXT("Collect"), RF_Public|RF_Transient|RF_MarkAsNative) UIntProperty(CPP_PROPERTY_BASE(Collect, FMissionStruct), 0x0010000000020015);
+			UProperty* NewProp_Kill = new(EC_InternalUseOnlyConstructor, ReturnStruct, TEXT("Kill"), RF_Public|RF_Transient|RF_MarkAsNative) UIntProperty(CPP_PROPERTY_BASE(Kill, FMissionStruct), 0x0010000000020015);
+			ReturnStruct->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnStruct->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnStruct, TEXT("BlueprintType"), TEXT("true"));
+			MetaData->SetValue(ReturnStruct, TEXT("IsBlueprintBase"), TEXT("true"));
+			MetaData->SetValue(ReturnStruct, TEXT("ModuleRelativePath"), TEXT("GameDataTables.h"));
+			MetaData->SetValue(NewProp_Collect, TEXT("Category"), TEXT("MissionStruct"));
+			MetaData->SetValue(NewProp_Collect, TEXT("ModuleRelativePath"), TEXT("GameDataTables.h"));
+			MetaData->SetValue(NewProp_Kill, TEXT("Category"), TEXT("MissionStruct"));
+			MetaData->SetValue(NewProp_Kill, TEXT("ModuleRelativePath"), TEXT("GameDataTables.h"));
+#endif
+		}
+		return ReturnStruct;
+	}
+	uint32 Get_Z_Construct_UScriptStruct_FMissionStruct_CRC() { return 1663155185U; }
+	UScriptStruct* Z_Construct_UScriptStruct_FWeaponStruct()
+	{
+		UPackage* Outer = Z_Construct_UPackage__Script_Bellz();
+		extern uint32 Get_Z_Construct_UScriptStruct_FWeaponStruct_CRC();
+		static UScriptStruct* ReturnStruct = FindExistingStructIfHotReloadOrDynamic(Outer, TEXT("WeaponStruct"), sizeof(FWeaponStruct), Get_Z_Construct_UScriptStruct_FWeaponStruct_CRC(), false);
+		if (!ReturnStruct)
+		{
+			ReturnStruct = new(EC_InternalUseOnlyConstructor, Outer, TEXT("WeaponStruct"), RF_Public|RF_Transient|RF_MarkAsNative) UScriptStruct(FObjectInitializer(), Z_Construct_UScriptStruct_FTableRowBase(), new UScriptStruct::TCppStructOps<FWeaponStruct>, EStructFlags(0x00000001));
+			UProperty* NewProp_CooldownTime = new(EC_InternalUseOnlyConstructor, ReturnStruct, TEXT("CooldownTime"), RF_Public|RF_Transient|RF_MarkAsNative) UIntProperty(CPP_PROPERTY_BASE(CooldownTime, FWeaponStruct), 0x0010000000020015);
+			UProperty* NewProp_Damage = new(EC_InternalUseOnlyConstructor, ReturnStruct, TEXT("Damage"), RF_Public|RF_Transient|RF_MarkAsNative) UIntProperty(CPP_PROPERTY_BASE(Damage, FWeaponStruct), 0x0010000000020015);
+			UProperty* NewProp_DisplayName = new(EC_InternalUseOnlyConstructor, ReturnStruct, TEXT("DisplayName"), RF_Public|RF_Transient|RF_MarkAsNative) UStrProperty(CPP_PROPERTY_BASE(DisplayName, FWeaponStruct), 0x0010000000020015);
+			UProperty* NewProp_Icon = new(EC_InternalUseOnlyConstructor, ReturnStruct, TEXT("Icon"), RF_Public|RF_Transient|RF_MarkAsNative) UStrProperty(CPP_PROPERTY_BASE(Icon, FWeaponStruct), 0x0010000000020015);
+			ReturnStruct->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnStruct->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnStruct, TEXT("BlueprintType"), TEXT("true"));
+			MetaData->SetValue(ReturnStruct, TEXT("IsBlueprintBase"), TEXT("true"));
+			MetaData->SetValue(ReturnStruct, TEXT("ModuleRelativePath"), TEXT("GameDataTables.h"));
+			MetaData->SetValue(NewProp_CooldownTime, TEXT("Category"), TEXT("WeaponStruct"));
+			MetaData->SetValue(NewProp_CooldownTime, TEXT("ModuleRelativePath"), TEXT("GameDataTables.h"));
+			MetaData->SetValue(NewProp_Damage, TEXT("Category"), TEXT("WeaponStruct"));
+			MetaData->SetValue(NewProp_Damage, TEXT("ModuleRelativePath"), TEXT("GameDataTables.h"));
+			MetaData->SetValue(NewProp_DisplayName, TEXT("Category"), TEXT("WeaponStruct"));
+			MetaData->SetValue(NewProp_DisplayName, TEXT("ModuleRelativePath"), TEXT("GameDataTables.h"));
+			MetaData->SetValue(NewProp_Icon, TEXT("Category"), TEXT("WeaponStruct"));
+			MetaData->SetValue(NewProp_Icon, TEXT("ModuleRelativePath"), TEXT("GameDataTables.h"));
+#endif
+		}
+		return ReturnStruct;
+	}
+	uint32 Get_Z_Construct_UScriptStruct_FWeaponStruct_CRC() { return 836365897U; }
+	UFunction* Z_Construct_UFunction_AGameDataTables_OnFetchAllTables()
+	{
+		UObject* Outer=Z_Construct_UClass_AGameDataTables();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("OnFetchAllTables"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x04020401, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Game DataTables"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("GameDataTables.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UClass* Z_Construct_UClass_AGameDataTables_NoRegister()
+	{
+		return AGameDataTables::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AGameDataTables()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AActor();
+			Z_Construct_UPackage__Script_Bellz();
+			OuterClass = AGameDataTables::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+				OuterClass->LinkChild(Z_Construct_UFunction_AGameDataTables_OnFetchAllTables());
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_AllMissionsData = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("AllMissionsData"), RF_Public|RF_Transient|RF_MarkAsNative) UArrayProperty(CPP_PROPERTY_BASE(AllMissionsData, AGameDataTables), 0x0010000000020005);
+				UProperty* NewProp_AllMissionsData_Inner = new(EC_InternalUseOnlyConstructor, NewProp_AllMissionsData, TEXT("AllMissionsData"), RF_Public|RF_Transient|RF_MarkAsNative) UStructProperty(FObjectInitializer(), EC_CppProperty, 0, 0x0000000000020000, Z_Construct_UScriptStruct_FMissionStruct());
+				UProperty* NewProp_AllWeaponsData = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("AllWeaponsData"), RF_Public|RF_Transient|RF_MarkAsNative) UArrayProperty(CPP_PROPERTY_BASE(AllWeaponsData, AGameDataTables), 0x0010000000020005);
+				UProperty* NewProp_AllWeaponsData_Inner = new(EC_InternalUseOnlyConstructor, NewProp_AllWeaponsData, TEXT("AllWeaponsData"), RF_Public|RF_Transient|RF_MarkAsNative) UStructProperty(FObjectInitializer(), EC_CppProperty, 0, 0x0000000000020000, Z_Construct_UScriptStruct_FWeaponStruct());
+				UProperty* NewProp_MissionsTable = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("MissionsTable"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(MissionsTable, AGameDataTables), 0x0010000000000005, Z_Construct_UClass_UDataTable_NoRegister());
+				UProperty* NewProp_WeaponsTable = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("WeaponsTable"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(WeaponsTable, AGameDataTables), 0x0010000000000005, Z_Construct_UClass_UDataTable_NoRegister());
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AGameDataTables_OnFetchAllTables(), "OnFetchAllTables"); // 1900020970
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("GameDataTables.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("GameDataTables.h"));
+				MetaData->SetValue(OuterClass, TEXT("OnlyDefaultConstructorDeclared"), TEXT(""));
+				MetaData->SetValue(NewProp_AllMissionsData, TEXT("Category"), TEXT("Game DataTables"));
+				MetaData->SetValue(NewProp_AllMissionsData, TEXT("ModuleRelativePath"), TEXT("GameDataTables.h"));
+				MetaData->SetValue(NewProp_AllWeaponsData, TEXT("Category"), TEXT("Game DataTables"));
+				MetaData->SetValue(NewProp_AllWeaponsData, TEXT("ModuleRelativePath"), TEXT("GameDataTables.h"));
+				MetaData->SetValue(NewProp_MissionsTable, TEXT("Category"), TEXT("Game DataTables"));
+				MetaData->SetValue(NewProp_MissionsTable, TEXT("ModuleRelativePath"), TEXT("GameDataTables.h"));
+				MetaData->SetValue(NewProp_WeaponsTable, TEXT("Category"), TEXT("Game DataTables"));
+				MetaData->SetValue(NewProp_WeaponsTable, TEXT("ModuleRelativePath"), TEXT("GameDataTables.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AGameDataTables(Z_Construct_UClass_AGameDataTables, &AGameDataTables::StaticClass, TEXT("AGameDataTables"), false, nullptr, nullptr);
+	DEFINE_VTABLE_PTR_HELPER_CTOR(AGameDataTables);
 	UFunction* Z_Construct_UFunction_AGladiator_GetCameraBoomAlternate()
 	{
 		struct Gladiator_eventGetCameraBoomAlternate_Parms
@@ -130,7 +306,6 @@ void EmptyLinkFunctionForGeneratedCode1Bellz() {}
 			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
 			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Player Attributes"));
 			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Gladiator.h"));
-			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = \"Game DataTables\")\n       AGameDataTables* TablesInstance;"));
 #endif
 		}
 		return ReturnFunction;
@@ -368,6 +543,7 @@ void EmptyLinkFunctionForGeneratedCode1Bellz() {}
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 				UProperty* NewProp_AttackRange = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("AttackRange"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(AttackRange, AGladiator), 0x0020080000000005);
 				UProperty* NewProp_TotalHealth = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("TotalHealth"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(TotalHealth, AGladiator), 0x0020080000000005);
+				UProperty* NewProp_TablesInstance = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("TablesInstance"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(TablesInstance, AGladiator), 0x0010000000000015, Z_Construct_UClass_AGameDataTables_NoRegister());
 				CPP_BOOL_PROPERTY_BITMASK_STRUCT(IsControlable, AGladiator, bool);
 				UProperty* NewProp_IsControlable = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("IsControlable"), RF_Public|RF_Transient|RF_MarkAsNative) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(IsControlable, AGladiator), 0x0010000000000015, CPP_BOOL_PROPERTY_BITMASK(IsControlable, AGladiator), sizeof(bool), true);
 				UProperty* NewProp_WeaponIndex = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("WeaponIndex"), RF_Public|RF_Transient|RF_MarkAsNative) UIntProperty(CPP_PROPERTY_BASE(WeaponIndex, AGladiator), 0x0010000000000015);
@@ -383,7 +559,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 				UProperty* NewProp_CameraBoom = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CameraBoom"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(CameraBoom, AGladiator), 0x00100000000a001d, Z_Construct_UClass_USpringArmComponent_NoRegister());
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AGladiator_GetCameraBoomAlternate(), "GetCameraBoomAlternate"); // 3029105268
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AGladiator_GetIsStillAlive(), "GetIsStillAlive"); // 1962866565
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AGladiator_GetIsStillAlive(), "GetIsStillAlive"); // 4176200591
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AGladiator_Jump(), "Jump"); // 1587542811
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AGladiator_MoveForward(), "MoveForward"); // 3634727939
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AGladiator_MoveRight(), "MoveRight"); // 3355037726
@@ -406,6 +582,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				MetaData->SetValue(NewProp_AttackRange, TEXT("ModuleRelativePath"), TEXT("Gladiator.h"));
 				MetaData->SetValue(NewProp_TotalHealth, TEXT("Category"), TEXT("Player Attributes"));
 				MetaData->SetValue(NewProp_TotalHealth, TEXT("ModuleRelativePath"), TEXT("Gladiator.h"));
+				MetaData->SetValue(NewProp_TablesInstance, TEXT("Category"), TEXT("Game DataTables"));
+				MetaData->SetValue(NewProp_TablesInstance, TEXT("ModuleRelativePath"), TEXT("Gladiator.h"));
 				MetaData->SetValue(NewProp_IsControlable, TEXT("Category"), TEXT("Player Attributes"));
 				MetaData->SetValue(NewProp_IsControlable, TEXT("ModuleRelativePath"), TEXT("Gladiator.h"));
 				MetaData->SetValue(NewProp_IsControlable, TEXT("ToolTip"), TEXT("Can the player still give input"));
@@ -456,8 +634,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/Bellz")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0xC59A73E8;
-			Guid.B = 0xE789CAE1;
+			Guid.A = 0xE80D6F00;
+			Guid.B = 0x343D1D4A;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

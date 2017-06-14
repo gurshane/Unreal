@@ -8,6 +8,9 @@
 #ifndef BELLZ_BellzGameMode_generated_h
 	#include "BellzGameMode.h"
 #endif
+#ifndef BELLZ_GameDataTables_generated_h
+	#include "GameDataTables.h"
+#endif
 #ifndef BELLZ_Gladiator_generated_h
 	#include "Gladiator.h"
 #endif

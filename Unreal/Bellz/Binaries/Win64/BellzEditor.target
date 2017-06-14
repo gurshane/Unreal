@@ -2,7 +2,7 @@
 	"TargetName" : "BellzEditor",
 	"Platform" : "Win64",
 	"Configuration" : "Development",
-	"BuildId" : "a421d7f4-166d-4e94-948b-41d1f02b9422",
+	"BuildId" : "cbafceaf-e73f-42a6-8a95-ead44651f544",
 	"Version" : 
 	{
 		"MajorVersion" : 4,
@@ -15,15 +15,15 @@
 	"BuildProducts" :
 	[
 		{
-			"Path" : "$(ProjectDir)/Binaries/Win64/UE4Editor-Bellz-5993.dll",
+			"Path" : "$(ProjectDir)/Binaries/Win64/UE4Editor-Bellz-2148.dll",
 			"Type" : "DynamicLibrary"
 		},
 		{
-			"Path" : "$(ProjectDir)/Binaries/Win64/UE4Editor-Bellz-5993.pdb",
+			"Path" : "$(ProjectDir)/Binaries/Win64/UE4Editor-Bellz-2148.pdb",
 			"Type" : "SymbolFile"
 		},
 		{
-			"Path" : "$(ProjectDir)/Intermediate/Build/Win64/UE4Editor/Development/UE4Editor-Bellz-5993.lib",
+			"Path" : "$(ProjectDir)/Intermediate/Build/Win64/UE4Editor/Development/UE4Editor-Bellz-2148.lib",
 			"Type" : "ImportLibrary"
 		}
 	],

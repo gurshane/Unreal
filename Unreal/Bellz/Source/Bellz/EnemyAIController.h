@@ -13,6 +13,8 @@ class BELLZ_API AEnemyAIController : public AAIController
 {
 	GENERATED_BODY()
 	
+	AEnemyAIController();
+
 	UPROPERTY(transient)
 	UBlackboardComponent* BlackboardComp;
 

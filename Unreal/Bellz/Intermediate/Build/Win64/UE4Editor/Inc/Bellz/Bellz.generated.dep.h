@@ -8,6 +8,12 @@
 #ifndef BELLZ_BellzGameMode_generated_h
 	#include "BellzGameMode.h"
 #endif
+#ifndef BELLZ_Enemy_generated_h
+	#include "Enemy.h"
+#endif
+#ifndef BELLZ_EnemyAIController_generated_h
+	#include "EnemyAIController.h"
+#endif
 #ifndef BELLZ_GameDataTables_generated_h
 	#include "GameDataTables.h"
 #endif

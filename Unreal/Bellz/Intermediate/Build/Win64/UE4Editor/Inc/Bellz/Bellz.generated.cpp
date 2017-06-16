@@ -13,6 +13,19 @@ void EmptyLinkFunctionForGeneratedCode1Bellz() {}
 	{
 	}
 	IMPLEMENT_CLASS(ABellzGameMode, 3878678164);
+	void AEnemy::StaticRegisterNativesAEnemy()
+	{
+	}
+	IMPLEMENT_CLASS(AEnemy, 61280141);
+	void AEnemyAIController::StaticRegisterNativesAEnemyAIController()
+	{
+		FNativeFunctionRegistrar::RegisterFunction(AEnemyAIController::StaticClass(), "GetEnemy",(Native)&AEnemyAIController::execGetEnemy);
+		FNativeFunctionRegistrar::RegisterFunction(AEnemyAIController::StaticClass(), "OnSearchForEnemy",(Native)&AEnemyAIController::execOnSearchForEnemy);
+		FNativeFunctionRegistrar::RegisterFunction(AEnemyAIController::StaticClass(), "PawnCanBeSeen",(Native)&AEnemyAIController::execPawnCanBeSeen);
+		FNativeFunctionRegistrar::RegisterFunction(AEnemyAIController::StaticClass(), "SetEnemy",(Native)&AEnemyAIController::execSetEnemy);
+		FNativeFunctionRegistrar::RegisterFunction(AEnemyAIController::StaticClass(), "UpdateControlRotation",(Native)&AEnemyAIController::execUpdateControlRotation);
+	}
+	IMPLEMENT_CLASS(AEnemyAIController, 3439680210);
 class UScriptStruct* FMissionStruct::StaticStruct()
 {
 	extern BELLZ_API class UPackage* Z_Construct_UPackage__Script_Bellz();
@@ -77,16 +90,29 @@ static struct FScriptStruct_Bellz_StaticRegisterNativesFWeaponStruct
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
 	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
+	ENGINE_API class UClass* Z_Construct_UClass_ACharacter();
+	ENGINE_API class UClass* Z_Construct_UClass_APawn_NoRegister();
+	AIMODULE_API class UClass* Z_Construct_UClass_AAIController();
+	AIMODULE_API class UClass* Z_Construct_UClass_UBehaviorTreeComponent_NoRegister();
+	AIMODULE_API class UClass* Z_Construct_UClass_UBlackboardComponent_NoRegister();
 	ENGINE_API class UScriptStruct* Z_Construct_UScriptStruct_FTableRowBase();
 	ENGINE_API class UClass* Z_Construct_UClass_AActor();
 	ENGINE_API class UClass* Z_Construct_UClass_UDataTable_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
-	ENGINE_API class UClass* Z_Construct_UClass_ACharacter();
 	PAPER2D_API class UClass* Z_Construct_UClass_UPaperSpriteComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 
 	BELLZ_API class UClass* Z_Construct_UClass_ABellzGameMode_NoRegister();
 	BELLZ_API class UClass* Z_Construct_UClass_ABellzGameMode();
+	BELLZ_API class UClass* Z_Construct_UClass_AEnemy_NoRegister();
+	BELLZ_API class UClass* Z_Construct_UClass_AEnemy();
+	BELLZ_API class UFunction* Z_Construct_UFunction_AEnemyAIController_GetEnemy();
+	BELLZ_API class UFunction* Z_Construct_UFunction_AEnemyAIController_OnSearchForEnemy();
+	BELLZ_API class UFunction* Z_Construct_UFunction_AEnemyAIController_PawnCanBeSeen();
+	BELLZ_API class UFunction* Z_Construct_UFunction_AEnemyAIController_SetEnemy();
+	BELLZ_API class UFunction* Z_Construct_UFunction_AEnemyAIController_UpdateControlRotation();
+	BELLZ_API class UClass* Z_Construct_UClass_AEnemyAIController_NoRegister();
+	BELLZ_API class UClass* Z_Construct_UClass_AEnemyAIController();
 	BELLZ_API class UScriptStruct* Z_Construct_UScriptStruct_FMissionStruct();
 	BELLZ_API class UScriptStruct* Z_Construct_UScriptStruct_FWeaponStruct();
 	BELLZ_API class UFunction* Z_Construct_UFunction_AGameDataTables_OnFetchAllTables();
@@ -141,6 +167,203 @@ static struct FScriptStruct_Bellz_StaticRegisterNativesFWeaponStruct
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ABellzGameMode(Z_Construct_UClass_ABellzGameMode, &ABellzGameMode::StaticClass, TEXT("ABellzGameMode"), false, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ABellzGameMode);
+	UClass* Z_Construct_UClass_AEnemy_NoRegister()
+	{
+		return AEnemy::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AEnemy()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_ACharacter();
+			Z_Construct_UPackage__Script_Bellz();
+			OuterClass = AEnemy::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Enemy.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Enemy.h"));
+				MetaData->SetValue(OuterClass, TEXT("OnlyDefaultConstructorDeclared"), TEXT(""));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AEnemy(Z_Construct_UClass_AEnemy, &AEnemy::StaticClass, TEXT("AEnemy"), false, nullptr, nullptr);
+	DEFINE_VTABLE_PTR_HELPER_CTOR(AEnemy);
+	UFunction* Z_Construct_UFunction_AEnemyAIController_GetEnemy()
+	{
+		struct EnemyAIController_eventGetEnemy_Parms
+		{
+			AGladiator* ReturnValue;
+		};
+		UObject* Outer=Z_Construct_UClass_AEnemyAIController();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("GetEnemy"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x54040401, 65535, sizeof(EnemyAIController_eventGetEnemy_Parms));
+			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(ReturnValue, EnemyAIController_eventGetEnemy_Parms), 0x0010000000000580, Z_Construct_UClass_AGladiator_NoRegister());
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Behaviour"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("EnemyAIController.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_AEnemyAIController_OnSearchForEnemy()
+	{
+		UObject* Outer=Z_Construct_UClass_AEnemyAIController();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("OnSearchForEnemy"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x04040401, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Behaviour"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("EnemyAIController.h"));
+			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Called when searching for enemey"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_AEnemyAIController_PawnCanBeSeen()
+	{
+		struct EnemyAIController_eventPawnCanBeSeen_Parms
+		{
+			APawn* target;
+			bool ReturnValue;
+		};
+		UObject* Outer=Z_Construct_UClass_AEnemyAIController();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("PawnCanBeSeen"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x04040401, 65535, sizeof(EnemyAIController_eventPawnCanBeSeen_Parms));
+			CPP_BOOL_PROPERTY_BITMASK_STRUCT(ReturnValue, EnemyAIController_eventPawnCanBeSeen_Parms, bool);
+			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(ReturnValue, EnemyAIController_eventPawnCanBeSeen_Parms), 0x0010000000000580, CPP_BOOL_PROPERTY_BITMASK(ReturnValue, EnemyAIController_eventPawnCanBeSeen_Parms), sizeof(bool), true);
+			UProperty* NewProp_target = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("target"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(target, EnemyAIController_eventPawnCanBeSeen_Parms), 0x0010000000000080, Z_Construct_UClass_APawn_NoRegister());
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Behaviour"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("EnemyAIController.h"));
+			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Determines if the target can be seen by this ai"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_AEnemyAIController_SetEnemy()
+	{
+		struct EnemyAIController_eventSetEnemy_Parms
+		{
+			APawn* InPawn;
+		};
+		UObject* Outer=Z_Construct_UClass_AEnemyAIController();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("SetEnemy"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x04040401, 65535, sizeof(EnemyAIController_eventSetEnemy_Parms));
+			UProperty* NewProp_InPawn = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("InPawn"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(InPawn, EnemyAIController_eventSetEnemy_Parms), 0x0010000000000080, Z_Construct_UClass_APawn_NoRegister());
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Behaviour"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("EnemyAIController.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_AEnemyAIController_UpdateControlRotation()
+	{
+		struct EnemyAIController_eventUpdateControlRotation_Parms
+		{
+			float DeltaTime;
+			bool bUpdatePawn;
+		};
+		UObject* Outer=Z_Construct_UClass_AEnemyAIController();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("UpdateControlRotation"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x04040401, 65535, sizeof(EnemyAIController_eventUpdateControlRotation_Parms));
+			CPP_BOOL_PROPERTY_BITMASK_STRUCT(bUpdatePawn, EnemyAIController_eventUpdateControlRotation_Parms, bool);
+			UProperty* NewProp_bUpdatePawn = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("bUpdatePawn"), RF_Public|RF_Transient|RF_MarkAsNative) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(bUpdatePawn, EnemyAIController_eventUpdateControlRotation_Parms), 0x0010000000000080, CPP_BOOL_PROPERTY_BITMASK(bUpdatePawn, EnemyAIController_eventUpdateControlRotation_Parms), sizeof(bool), true);
+			UProperty* NewProp_DeltaTime = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("DeltaTime"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(DeltaTime, EnemyAIController_eventUpdateControlRotation_Parms), 0x0010000000000080);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Behaviour"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("EnemyAIController.h"));
+			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Rotates ai towards player"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UClass* Z_Construct_UClass_AEnemyAIController_NoRegister()
+	{
+		return AEnemyAIController::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AEnemyAIController()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AAIController();
+			Z_Construct_UPackage__Script_Bellz();
+			OuterClass = AEnemyAIController::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900280;
+
+				OuterClass->LinkChild(Z_Construct_UFunction_AEnemyAIController_GetEnemy());
+				OuterClass->LinkChild(Z_Construct_UFunction_AEnemyAIController_OnSearchForEnemy());
+				OuterClass->LinkChild(Z_Construct_UFunction_AEnemyAIController_PawnCanBeSeen());
+				OuterClass->LinkChild(Z_Construct_UFunction_AEnemyAIController_SetEnemy());
+				OuterClass->LinkChild(Z_Construct_UFunction_AEnemyAIController_UpdateControlRotation());
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_BehaviourComp = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("BehaviourComp"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(BehaviourComp, AEnemyAIController), 0x0040000000082008, Z_Construct_UClass_UBehaviorTreeComponent_NoRegister());
+				UProperty* NewProp_BlackboardComp = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("BlackboardComp"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(BlackboardComp, AEnemyAIController), 0x0040000000082008, Z_Construct_UClass_UBlackboardComponent_NoRegister());
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AEnemyAIController_GetEnemy(), "GetEnemy"); // 324403416
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AEnemyAIController_OnSearchForEnemy(), "OnSearchForEnemy"); // 3543489596
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AEnemyAIController_PawnCanBeSeen(), "PawnCanBeSeen"); // 561000367
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AEnemyAIController_SetEnemy(), "SetEnemy"); // 865639574
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AEnemyAIController_UpdateControlRotation(), "UpdateControlRotation"); // 856932041
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Collision Rendering Utilities|Transformation"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("EnemyAIController.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("EnemyAIController.h"));
+				MetaData->SetValue(NewProp_BehaviourComp, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_BehaviourComp, TEXT("ModuleRelativePath"), TEXT("EnemyAIController.h"));
+				MetaData->SetValue(NewProp_BlackboardComp, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_BlackboardComp, TEXT("ModuleRelativePath"), TEXT("EnemyAIController.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AEnemyAIController(Z_Construct_UClass_AEnemyAIController, &AEnemyAIController::StaticClass, TEXT("AEnemyAIController"), false, nullptr, nullptr);
+	DEFINE_VTABLE_PTR_HELPER_CTOR(AEnemyAIController);
 	UScriptStruct* Z_Construct_UScriptStruct_FMissionStruct()
 	{
 		UPackage* Outer = Z_Construct_UPackage__Script_Bellz();
@@ -634,8 +857,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/Bellz")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0xE80D6F00;
-			Guid.B = 0x343D1D4A;
+			Guid.A = 0xCE754CEF;
+			Guid.B = 0xC701670F;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

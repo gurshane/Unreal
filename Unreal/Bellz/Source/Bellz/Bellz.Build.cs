@@ -6,7 +6,7 @@ public class Bellz : ModuleRules
 {
 	public Bellz(TargetInfo Target)
 	{
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "Paper2D" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "Paper2D", "AIModule" });
 
         //PrivateIncludePaths.AddRange(new string[] { "C:\\Program Files\\Epic Games\\UE_4.12\\Engine\\Plugins\\2D\\Paper2D\\Source\\Paper2D\\Classes",
         //                                            "C:\\Program Files\\Epic Games\\UE_4.12\\Engine\\Plugins\\2D\\Paper2D\\Source\\Paper2D\\Public",

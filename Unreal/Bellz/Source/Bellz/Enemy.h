@@ -16,6 +16,8 @@ public:
 
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
+	void AEnemy::PostInitializeComponents();
 	
 	// Called every frame
 	virtual void Tick( float DeltaSeconds ) override;
@@ -75,7 +77,7 @@ public:
 	void OnSeePawn(APawn* OtherPawn);
 
 	UFUNCTION()
-	void OnHandTriggerOverlap(class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+	void OnHandTriggerOverlap(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
 	FORCEINLINE class USphereComponent* GetBodySphereTrigger() const { return bodySphereTrigger; }
 };

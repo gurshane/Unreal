@@ -121,3 +121,8 @@ void AEnemyAIController::OnSearchForEnemy()
 		SetEnemy(PlayerPawn);
 	}
 }
+
+bool AEnemyAIController::PawnCanBeSeen(APawn* OtherPawn)
+{
+	return true;
+}

@@ -23,7 +23,7 @@ class BELLZ_API AEnemyAIController : public AAIController
 
 	virtual void Possess(class APawn* InPawn) override;
 
-	virtual void BeginInactiveState() override;
+	//virtual void BeginInactiveState() override;
 	
 	UFUNCTION(BlueprintCallable, Category = Behaviour)
 	void SetEnemy(class APawn* InPawn);

@@ -31,7 +31,7 @@ AEnemy::AEnemy()
 	//setup body trigger
 	bodySphereTrigger = CreateDefaultSubobject<USphereComponent>(TEXT("BodyTriggerSphere"));
 	bodySphereTrigger->SetSphereRadius(150.0f);
-	bodySphereTrigger->AttachTo(Mesh);
+	bodySphereTrigger->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, NAME_None);
 
 	//color of hand trigger
 	FColor handsTriggersColor = FColor(0, 0, 255, 255);
@@ -39,14 +39,14 @@ AEnemy::AEnemy()
 	//setup and attach left hand trigger
 	leftHandTrigger = CreateDefaultSubobject<USphereComponent>(TEXT("LeftHandTrigger"));
 	leftHandTrigger->SetSphereRadius(70.0f);
-	leftHandTrigger->AttachTo(Mesh, "hand_lf", EAttachLocation::SnapToTarget);
+	leftHandTrigger->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetIncludingScale, "hand_lf");
 	leftHandTrigger->ShapeColor = handsTriggersColor;
 	leftHandTrigger->bGenerateOverlapEvents = 0;
 
 	//setup and attach right hand trigger
 	rightHandTrigger = CreateDefaultSubobject<USphereComponent>(TEXT("RightHandTrigger"));
 	rightHandTrigger->SetSphereRadius(70.0f);
-	rightHandTrigger->AttachTo(Mesh, "hand_rt", EAttachLocation::SnapToTarget);
+	rightHandTrigger->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetIncludingScale, "hand_rt");
 	rightHandTrigger->ShapeColor = handsTriggersColor;
 	rightHandTrigger->bGenerateOverlapEvents = 0;
 
@@ -76,3 +76,61 @@ void AEnemy::SetupPlayerInputComponent(class UInputComponent* InputComponent)
 
 }
 
+
+void AEnemy::PostInitializeComponents()
+{
+	Super::PostInitializeComponents();
+	PawnSensor->OnSeePawn.AddDynamic(this, &AEnemy::OnSeePawn);
+	PawnSensor->OnHearNoise.AddDynamic(this, &AEnemy::OnHearNoise);
+
+	leftHandTrigger->OnComponentBeginOverlap.AddDynamic(this, &AEnemy::OnHandTriggerOverlap);
+	rightHandTrigger->OnComponentBeginOverlap.AddDynamic(this, &AEnemy::OnHandTriggerOverlap);
+}
+
+void AEnemy::OnSeePawn(APawn* OtherActor)
+{
+	FVector directionToMove = OtherActor->GetActorLocation() - GetActorLocation();
+	AddMovementInput(directionToMove, 0.3f);
+}
+
+void AEnemy::OnHearNoise(APawn* OtherPawn, const FVector &Location, float Volume)
+{
+	FVector directionToMove = Location - GetActorLocation();
+	AddMovementInput(directionToMove, 0.3f);
+}
+
+//Enables the triggers before the attack happens
+void AEnemy::OnPreAttack()
+{
+	leftHandTrigger->bGenerateOverlapEvents = 1;
+	rightHandTrigger->bGenerateOverlapEvents = 1;
+
+	IsAttacking = true;
+}
+
+void AEnemy::OnPerformAttack()
+{
+
+}
+
+//Disables the triggers after the attack has finished
+void AEnemy::OnPostAttack()
+{
+	leftHandTrigger->bGenerateOverlapEvents = 0;
+	rightHandTrigger->bGenerateOverlapEvents = 0;
+
+	IsAttacking = false;
+}
+
+void AEnemy::OnHandTriggerOverlap(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult &SweepResult)
+{
+	//If we hit a gladiator, make it take damage
+	AGladiator* const _tempGladiator = Cast<AGladiator>(OtherActor);
+	if (_tempGladiator)
+	{
+		leftHandTrigger->bGenerateOverlapEvents = 0;
+		rightHandTrigger->bGenerateOverlapEvents = 0;
+
+		_tempGladiator->OnChangeHealthByAmount(5.0f);
+	}
+}
